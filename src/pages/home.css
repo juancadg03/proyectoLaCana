@@ -1,0 +1,76 @@
+/* Fondo general de la portada */
+.home {
+  min-height: 100vh;
+  background: #050505;           /* negro casi puro */
+  color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;       /* título hacia la parte superior */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Sección hero en la parte superior */
+.hero {
+  width: 100%;
+  max-width: 1100px;
+  padding: 2.5rem 2rem;
+}
+
+/* Contenedor del título: ocupa todo el ancho, pero poco alto */
+.hero-title-wrapper {
+  position: relative;
+  height: 5.2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+/* Estilo base del título */
+.title {
+  margin: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+}
+
+/* Primer título: un poco más arriba y a la izquierda */
+.title-small {
+  font-size: 2.1rem;
+  font-weight: 300;
+  top: -7px;        /* ligeramente más arriba */
+  left: -15px;      /* ligeramente más hacia la izquierda */
+}
+
+/* Segundo título: más grande, más centrado en relación al primero */
+.title-big {
+  font-size: 3.6rem;
+  font-weight: 700;
+  top: 4px;         /* un poco más abajo */
+  left: 0px;        /* menos desplazamiento lateral */
+}
+
+/* Animación en ciclo: aparece, se mantiene, se desvanece */
+.fade-cycle {
+  animation: fadeCycle 6s ease-in-out infinite;
+}
+
+/* 6 segundos:
+   - 0% a 15%: aparece
+   - 15% a 70%: visible
+   - 70% a 100%: se desvanece
+*/
+@keyframes fadeCycle {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

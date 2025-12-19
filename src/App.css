@@ -1,0 +1,327 @@
+/* src/App.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&family=DM+Sans:wght@400;500&display=swap');
+
+/* ya tienes el import de Special Gothic Expanded One para el título */
+
+/* El root ocupa toda la pantalla */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Pantalla de inicio */
+.home {
+  min-height: 100vh;
+  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+
+  /* Fondo con imagen */
+  background-image: url("./assets/fondo.png");
+  background-size: auto;        /* que cubra toda la pantalla */
+  background-position: top;   /* centrada */
+  background-repeat: no-repeat;  /* que no se repita */
+  background-attachment: fixed;  /* efecto sutil de “parallax” al hacer scroll */
+}
+
+
+/* Sección superior (hero) */
+.hero {
+  padding: 2.5rem 3rem 1.5rem 3rem; /* arriba, lados, abajo */
+}
+
+/* Contenedor del título en la franja superior */
+.hero-title-wrapper {
+  position: relative;
+  height: 8rem;            /* altura fija para que no salte al cambiar */
+  overflow: visible;
+}
+
+/* Estilo base del título */
+.title {
+  position: absolute;
+  margin: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  color: black;
+}
+
+/* Cada palabra del título */
+/* Cada palabra del título */
+.title-word {
+  display: inline-block;
+  margin-right: 0.4rem;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: wordCycle 10s ease-in-out infinite;
+}
+
+
+/* Primer título: más pequeño */
+.title-small {
+  font-size: 2.7rem;
+  font-weight: 300;
+}
+
+/* Segundo título: más grande y pesado */
+.title-big {
+  font-size: 3.6rem;
+  font-weight: 700;
+}
+
+/* Primer título: más arriba y hacia la izquierda */
+.title-first {
+  top: 0.5rem;
+  left: 0rem;
+  rotate: -2deg;
+}
+
+/* Segundo título: un poco más abajo y centrado */
+.title-second {
+  top: 5rem;
+  left: 30%;
+  transform: translateX(-50%);
+  rotate: 2deg;
+}
+
+/* Delays: palabras del primer título ("La caña se ve") */
+.title-first .title-word:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.title-first .title-word:nth-child(2) {
+  animation-delay: 0.7s;
+}
+.title-first .title-word:nth-child(3) {
+  animation-delay: 1.2s;
+}
+.title-first .title-word:nth-child(4) {
+  animation-delay: 1.7s;
+}
+
+/* Delays: palabras del segundo título ("Y se contra ve") */
+.title-second .title-word:nth-child(1) {
+  animation-delay: 2.6s;
+}
+.title-second .title-word:nth-child(2) {
+  animation-delay: 3.1s;
+}
+.title-second .title-word:nth-child(3) {
+  animation-delay: 3.6s;
+}
+.title-second .title-word:nth-child(4) {
+  animation-delay: 4.1s;
+}
+
+/* Animación de entrada de cada palabra */
+/* Animación en ciclo de cada palabra */
+@keyframes wordCycle {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  6% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  60% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+/* ====== COLLAGE LIBRE DE IMÁGENES EN INICIO ====== */
+
+.image-collage-free {
+  padding: 0.6rem 2.4rem 2.8rem 2.4rem;
+}
+
+/* Contenedor relativo que mantiene todo el collage */
+.collage-layer {
+  position: relative;
+  max-width: 980px;
+  margin: 0 auto;
+  height: 380px; /* altura pensada para escritorio, similar a tu captura */
+}
+
+/* Estilo base de cada imagen del collage */
+.collage-img {
+  position: absolute;
+  display: block;
+
+  max-width: 260px;
+  width: 22vw;
+  max-height: 260px;
+  object-fit: contain;   /* respeta PNG con transparencia */
+
+  filter: grayscale(10%);
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Hover sutil, sin volverse un botón */
+.collage-img:hover {
+  transform: translateY(-4px) scale(1.03);
+  filter: grayscale(0%);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* ====== COMPOSICIÓN VISUAL (como en la captura) ======
+   Izquierda: cosechadora saliendo del cañaduzal + camión
+   Centro: tractor al frente, machete cruzado
+   Derecha: trabajador + carrito, bus arriba
+   Centro-izquierda: cortero antiguo + señal naranja superpuesta
+*/
+
+/* img11 – Cosechadora, abajo izquierda entrando al cañaduzal */
+.collage-img-11 {
+  bottom: 4%;
+  left: -7%;
+  width: 28vw;
+  max-width: 700px;
+  transform: rotate(-4deg);
+  z-index: 2;
+}
+
+/* img6 – Camión cañero, justo a la derecha de la cosechadora */
+.collage-img-6 {
+  bottom: 2%;
+  left: 3%;
+  width: 27vw;
+  max-width: 700px;
+  z-index: 3;
+}
+
+/* img5 – Tractor, centrado al frente */
+.collage-img-5 {
+  bottom: -7%;
+  left: 27%;
+  width: 25vw;
+  max-width: 768px;
+  z-index: 4;
+}
+
+/* img1 – Machete, en diagonal detrás del tractor */
+.collage-img-1 {
+  top: 30%;
+  left: 42%;
+  rotate: 45deg;
+  width: 12vw;
+  max-width: 150px;
+  transform: rotate(-45deg);
+  z-index: 3;
+}
+
+/* img4 – Trabajador actual, a la derecha del tractor */
+.collage-img-4 {
+  bottom: 25%;
+  left: 40%;
+  width: 28vw;
+  max-width: 600px;
+  z-index: 4;
+}
+
+/* img2 – Carrito de guarapo, extremo derecho abajo */
+.collage-img-2 {
+  bottom: 10%;
+  right: 0%;
+
+  /* HAZLO MÁS GRANDE */
+  width: 30vw;        /* más ancho */
+  max-width: 500px;   /* rompe el tope de 260px */
+  max-height: 500px;  /* muy importante para que no lo encoja en alto */
+
+  z-index: 3;
+}
+
+/* img3 – Bus Cañaveral, arriba del carrito */
+.collage-img-3 {
+  bottom: 47%;
+  right: -2%;
+  width: 24vw;
+  max-width: 500px;
+  max-height: 500px;
+  z-index: 2;
+}
+
+/* img10 – Cortero antiguo (foto b/n), centro-izquierda arriba */
+.collage-img-10 {
+  top: 0%;
+  left: 15%;
+  width: 15vw;
+  max-width: 190px;
+  z-index: 2;
+}
+
+/* img9 – Señal "Cruce de tren cañero", sobre el cortero */
+.collage-img-9 {
+  top: 0%;
+  left: 30%;
+  width: 11vw;
+  max-width: 170px;
+  z-index: 5;
+}
+
+/* ====== RESPONSIVE ====== */
+
+@media (max-width: 960px) {
+  .image-collage-free {
+    padding: 1.2rem 2rem 3rem 2rem;
+  }
+
+  .collage-layer {
+    height: 360px;
+    max-width: 100%;
+  }
+
+  .collage-img {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-collage-free {
+    padding: 1.5rem 1.5rem 3rem 1.5rem;
+  }
+
+  .collage-layer {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  /* En móvil: columna limpia, sin posiciones absolutas */
+  .collage-img {
+    position: static;
+    width: 70%;
+    max-width: 280px;
+    max-height: none;
+    box-shadow: none;
+    opacity: 1;
+    filter: grayscale(10%);
+  }
+
+  .collage-img:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.28);
+  }
+}
+
+

@@ -1,0 +1,144 @@
+/* src/components/MainMenu.css */
+
+/* Paleta base:
+   #B7BF75 – verde caña suave
+   #A4A672 – verde más apagado
+   #D9C5B4 – beige cálido
+   #F2F2F2 – casi blanco
+   #0D0D0D – negro profundo
+*/
+
+/* Barra tipo "tallo de caña" horizontal, muy minimal */
+.main-menu {
+  position: fixed;
+  top: 2.5rem;
+  right: 2.2rem;
+  z-index: 1000;
+
+  padding: 0.4rem 0.8rem;
+
+  /* Fondo claro, casi crema-verdoso */
+  background: #E3E4CC; /* tono suave entre verde y beige */
+  border-radius: 12px;
+  border: 1px solid rgba(164, 166, 114, 0.4); /* A4A672 suave */
+
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+
+  display: inline-block;
+}
+
+/* Hoja muy simple al final */
+.main-menu::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%) rotate(10deg);
+  width: 14px;
+  height: 22px;
+  border-radius: 14px 0 14px 0;
+  background: #B7BF75; /* verde caña suave */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+}
+
+/* Lista en fila dentro del tallo */
+.main-menu-list {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Item */
+.main-menu-item {
+  position: relative;
+  margin: 0;
+}
+
+/* Nudo muy sutil entre secciones */
+.main-menu-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -0.15rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 14px;
+  background: rgba(13, 13, 13, 0.12);
+}
+
+/* Botón plano y minimal */
+.main-menu-link {
+  border: none;
+  outline: none;
+  background: transparent;
+
+  color: #0D0D0D;
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+
+  padding: 0.25rem 0.45rem;
+  text-align: left;
+  cursor: pointer;
+
+  border-radius: 999px;
+  border: 1px solid transparent;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+
+  white-space: nowrap;
+
+  transition:
+    background-color 0.16s ease,
+    border-color 0.16s ease,
+    transform 0.1s ease;
+}
+
+/* Hover: solo un poco más claro y un borde sutil */
+.main-menu-link:hover {
+  background-color: rgba(242, 242, 242, 0.85);
+  border-color: rgba(164, 166, 114, 0.6);
+  transform: translateY(-1px);
+}
+
+/* Active: apenas más marcado */
+.main-menu-link:active {
+  background-color: #D9C5B4;
+  border-color: rgba(164, 166, 114, 0.9);
+  transform: translateY(0);
+}
+
+/* Focus accesible */
+.main-menu-link:focus-visible {
+  outline: 2px solid #B7BF75;
+  outline-offset: 2px;
+}
+
+/* Responsive: se centra arriba en pantallas pequeñas */
+@media (max-width: 768px) {
+  .main-menu {
+    top: 1rem;
+    right: 1rem;
+    left: 1rem;
+    padding: 0.35rem 0.6rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .main-menu-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+
+  .main-menu-link {
+    font-size: 0.55rem;
+    padding: 0.25rem 0.4rem;
+  }
+}

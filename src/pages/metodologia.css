@@ -1,0 +1,189 @@
+/* src/pages/Metodologia.css */
+
+.metodologia-page {
+  min-height: 100vh;
+  padding: 5.5rem 3rem 4rem 3rem;
+  background: #f2f2f2;
+  color: #0d0d0d;
+  font-family: "DM Sans", "Space Grotesk", system-ui, -apple-system, sans-serif;
+}
+
+/* Cabecera de la página */
+.metodologia-hero {
+  max-width: 880px;
+  margin: 0 auto 3rem auto;
+}
+
+.metodologia-overline {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  color: #a4a672;
+  margin-bottom: 0.4rem;
+}
+
+.metodologia-title {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 2.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 0.9rem 0;
+}
+
+.metodologia-intro {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #333333;
+}
+
+/* ====== Timeline ====== */
+
+.timeline-section {
+  position: relative;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1rem 0 3.5rem 0;
+}
+
+/* Línea vertical central */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    rgba(183, 191, 117, 0.9),
+    rgba(164, 166, 114, 0.7)
+  );
+  opacity: 0.7;
+}
+
+/* Contenedor de items */
+.timeline-items {
+  position: relative;
+}
+
+/* Item base */
+.timeline-item {
+  position: relative;
+  display: flex;
+  margin: 2.4rem 0;
+}
+
+/* Punto sobre la línea */
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 0.9rem;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #b7bf75;
+  box-shadow: 0 0 0 4px rgba(242, 242, 242, 0.95);
+}
+
+/* Tarjeta de contenido */
+.timeline-card {
+  max-width: 380px;
+  background: rgba(242, 242, 242, 0.96);
+  border-radius: 18px;
+  padding: 0.95rem 1.3rem 1.05rem 1.3rem;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(217, 197, 180, 0.9);
+}
+
+/* Izquierda / derecha del eje */
+.timeline-left {
+  justify-content: flex-start;
+}
+
+.timeline-right {
+  justify-content: flex-end;
+}
+
+.timeline-left .timeline-card {
+  margin-right: 4rem;
+  border-left: 4px solid #b7bf75;
+}
+
+.timeline-right .timeline-card {
+  margin-left: 4rem;
+  border-right: 4px solid #a4a672;
+}
+
+/* Textos dentro de la tarjeta */
+.timeline-period {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #a4a672;
+  margin-bottom: 0.35rem;
+}
+
+.timeline-card-title {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 1.05rem;
+  margin: 0 0 0.4rem 0;
+}
+
+.timeline-card-text {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #333333;
+}
+
+/* Pequeño detalle de acento en hover */
+.timeline-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* ====== Responsive ====== */
+
+@media (max-width: 960px) {
+  .metodologia-page {
+    padding: 5rem 2rem 3.5rem 2rem;
+  }
+
+  .timeline-left .timeline-card,
+  .timeline-right .timeline-card {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .metodologia-page {
+    padding: 4.5rem 1.5rem 3rem 1.5rem;
+  }
+
+  .timeline-line {
+    left: 0.7rem;
+    transform: translateX(0);
+  }
+
+  .timeline-dot {
+    left: 0.7rem;
+    transform: translateX(0);
+  }
+
+  .timeline-item {
+    margin: 2rem 0;
+  }
+
+  .timeline-left,
+  .timeline-right {
+    justify-content: flex-start;
+  }
+
+  .timeline-card {
+    margin-left: 2.4rem;
+    margin-right: 0;
+    max-width: 100%;
+  }
+}

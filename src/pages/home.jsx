@@ -16,7 +16,6 @@ import img10 from "../assets/img10.jpeg";
 function Home() {
   return (
     <main className="home">
-      <MainMenu />
 
       {/* Sección de inicio / héroe */}
       <section className="hero" id="inicio">

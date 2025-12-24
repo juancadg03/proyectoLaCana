@@ -17,18 +17,43 @@
 /* Pantalla de inicio */
 .home {
   min-height: 100vh;
-  color: rgba(255, 255, 255, 0.9);
   display: flex;
   flex-direction: column;
 
-  /* Fondo con imagen */
-  background-image: url("./assets/fondo.png");
-  background-size: auto;        /* que cubra toda la pantalla */
-  background-position: top;   /* centrada */
-  background-repeat: no-repeat;  /* que no se repita */
-  background-attachment: fixed;  /* efecto sutil de “parallax” al hacer scroll */
-}
+  /* Texto oscuro para que siempre se vea */
+  color: #0d0d0d;
 
+  /* 2 capas de fondo:
+     1) imagen de caña (fondo.png) repetida en X
+     2) degradado suave de base
+     
+     OJO: la PRIMERA es la que va ENCIMA
+  */
+  background-image:
+    url("./assets/fondo.png"),
+    linear-gradient(
+      to top,
+      #F2F2F2 0%,
+      #D9D7BA 40%,
+      #BDBF80 100%
+    );
+
+  /* La caña se repite en horizontal; el degradado no */
+  background-repeat: repeat-x, no-repeat;
+
+  /* La caña pegada abajo; el degradado cubre todo */
+  background-position: bottom center, top center;
+
+  /* Tamaño de cada capa:
+     - caña: franja de ~420px de alto
+     - degradado: cubre toda la pantalla
+  */
+  background-size: 620px auto, cover;
+
+  /* El degradado hace efecto “suave” al scroll;
+     la caña se mueve normal */
+  background-attachment: scroll, fixed;
+}
 
 /* Sección superior (hero) */
 .hero {
@@ -191,7 +216,7 @@
 /* img11 – Cosechadora, abajo izquierda entrando al cañaduzal */
 .collage-img-11 {
   bottom: 4%;
-  left: -7%;
+  left: -20%;
   width: 28vw;
   max-width: 700px;
   transform: rotate(-4deg);
@@ -200,7 +225,7 @@
 
 /* img6 – Camión cañero, justo a la derecha de la cosechadora */
 .collage-img-6 {
-  bottom: 2%;
+  bottom: -21%;
   left: 3%;
   width: 27vw;
   max-width: 700px;
@@ -209,7 +234,7 @@
 
 /* img5 – Tractor, centrado al frente */
 .collage-img-5 {
-  bottom: -7%;
+  bottom: -18%;
   left: 27%;
   width: 25vw;
   max-width: 768px;
@@ -218,8 +243,8 @@
 
 /* img1 – Machete, en diagonal detrás del tractor */
 .collage-img-1 {
-  top: 30%;
-  left: 42%;
+  top: 35%;
+  left: 44%;
   rotate: 45deg;
   width: 12vw;
   max-width: 150px;
@@ -229,7 +254,7 @@
 
 /* img4 – Trabajador actual, a la derecha del tractor */
 .collage-img-4 {
-  bottom: 25%;
+  bottom: 20%;
   left: 40%;
   width: 28vw;
   max-width: 600px;
@@ -238,8 +263,8 @@
 
 /* img2 – Carrito de guarapo, extremo derecho abajo */
 .collage-img-2 {
-  bottom: 10%;
-  right: 0%;
+  bottom: -7%;
+  right: -6%;
 
   /* HAZLO MÁS GRANDE */
   width: 30vw;        /* más ancho */
@@ -251,8 +276,8 @@
 
 /* img3 – Bus Cañaveral, arriba del carrito */
 .collage-img-3 {
-  bottom: 47%;
-  right: -2%;
+  bottom: 40%;
+  right: -15%;
   width: 24vw;
   max-width: 500px;
   max-height: 500px;
@@ -262,7 +287,7 @@
 /* img10 – Cortero antiguo (foto b/n), centro-izquierda arriba */
 .collage-img-10 {
   top: 0%;
-  left: 15%;
+  left: 13%;
   width: 15vw;
   max-width: 190px;
   z-index: 2;

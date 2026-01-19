@@ -1,0 +1,349 @@
+/* src/pages/contra-imagen.css */
+
+.contra-imagen-page {
+  min-height: 100vh;
+  padding: 5.5rem 3rem 4rem 3rem;
+  background: #f2f2f2;
+  color: #0d0d0d;
+  font-family: "DM Sans", "Space Grotesk", system-ui, -apple-system, sans-serif;
+}
+
+/* Header */
+.contra-imagen-hero {
+  max-width: 900px;
+  margin: 0 auto 2.8rem auto;
+}
+
+.contra-imagen-overline {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  color: #a4a672;
+  margin: 0 0 0.4rem 0;
+  font-family: "DM Sans", system-ui, sans-serif;
+}
+
+.contra-imagen-title {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 2.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 0.9rem 0;
+}
+
+.contra-imagen-intro {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #333333;
+  margin: 0;
+}
+
+.contra-imagen-intro .ci-citation {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 0.35rem;
+  margin-left: 0;
+} 
+
+/* Layout wrapper */
+.ci-wrap {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+/* Section split */
+.ci-section {
+  display: grid;
+  align-items: start;
+  gap: 1.2rem;
+  padding: 1.2rem 1.1rem;
+  border-radius: 18px;
+
+  background: rgba(242, 242, 242, 0.72);
+  border: 1px solid rgba(217, 197, 180, 0.7);
+  box-shadow: 0 16px 30px rgba(13, 13, 13, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.ci-section.text-left {
+  grid-template-columns: 0.9fr 1.3fr; /* texto izq, galería der */
+}
+
+.ci-section.text-right {
+  grid-template-columns: 1.3fr 0.9fr; /* galería izq, texto der */
+}
+
+.ci-section.text-right .ci-text {
+  order: 2;
+  text-align: right;
+}
+
+.ci-section.text-right .ci-gallery {
+  order: 1;
+}
+
+/* Text block */
+.ci-text {
+  padding: 0.4rem 0.4rem 0.2rem 0.4rem;
+}
+
+.ci-overline {
+  margin: 0 0 0.45rem 0;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #a4a672;
+}
+
+.ci-title {
+  margin: 0 0 0.55rem 0;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 1.55rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(13, 13, 13, 0.92);
+}
+
+.ci-desc {
+  margin: 0;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: rgba(13, 13, 13, 0.78);
+  max-width: 42ch;
+}
+
+.text-right .ci-desc {
+  margin-left: auto;
+}
+
+/* Accent (barra sutil al lado del texto) */
+.ci-text {
+  position: relative;
+}
+
+.ci-text::before {
+  content: "";
+  position: absolute;
+  top: 0.15rem;
+  bottom: 0.15rem;
+  width: 4px;
+  border-radius: 999px;
+  opacity: 0.9;
+}
+
+.text-left .ci-text::before {
+  left: -0.35rem;
+}
+
+.text-right .ci-text::before {
+  right: -0.35rem;
+}
+
+.ci-text.accent-a::before {
+  background: linear-gradient(180deg, rgba(183, 191, 117, 0.95), rgba(183, 191, 117, 0.25));
+}
+
+.ci-text.accent-b::before {
+  background: linear-gradient(180deg, rgba(164, 166, 114, 0.95), rgba(164, 166, 114, 0.25));
+}
+
+.ci-text.accent-c::before {
+  background: linear-gradient(180deg, rgba(217, 197, 180, 0.9), rgba(217, 197, 180, 0.22));
+}
+
+/* Gallery grid */
+.ci-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+  align-items: stretch;
+}
+
+/* Image card */
+.ci-card {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+
+  background: rgba(242, 242, 242, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.10);
+
+  transform: translateY(0);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.ci-img {
+  width: 100%;
+  height: 128px;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(10%);
+  transition: transform 0.22s ease, filter 0.22s ease;
+}
+
+.ci-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.14);
+}
+
+.ci-card:hover .ci-img {
+  transform: scale(1.03);
+  filter: grayscale(0%);
+}
+
+/* Responsive */
+@media (max-width: 1050px) {
+  .ci-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 960px) {
+  .contra-imagen-page {
+    padding: 5rem 2rem 3.2rem 2rem;
+  }
+
+  .ci-section.text-left,
+  .ci-section.text-right {
+    grid-template-columns: 1fr;
+  }
+
+  .ci-section.text-right .ci-text,
+  .ci-section.text-right .ci-gallery {
+    order: initial;
+    text-align: left;
+  }
+
+  .text-right .ci-desc {
+    margin-left: 0;
+  }
+
+  .ci-text::before {
+    left: -0.35rem;
+    right: auto;
+  }
+
+  .ci-gallery {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .ci-img {
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contra-imagen-page {
+    padding: 4.5rem 1.5rem 3rem 1.5rem;
+  }
+
+  .contra-imagen-title {
+    font-size: 2rem;
+  }
+
+  .ci-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ci-img {
+    height: 150px;
+  }
+}
+
+/* ===== LIGHTBOX / MODAL ===== */
+
+.ci-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  background: rgba(13, 13, 13, 0.85);
+  backdrop-filter: blur(6px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.ci-modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+
+  background: #f2f2f2;
+  border-radius: 18px;
+  overflow: hidden;
+
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+.ci-modal-img {
+  display: block;
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+/* Close button */
+.ci-modal-close {
+  position: absolute;
+  top: 0.6rem;
+  left: 95%; /* centrar horizontalmente */
+  right: auto;
+  transform: translateX(-50%);
+
+  border: none;
+  background: rgba(13, 13, 13, 0.7);
+  color: #f2f2f2;
+
+  width: 38px; /* un poco más grande para mejor hit area */
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1rem;
+  line-height: 1;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.ci-modal-close:hover {
+  background: rgba(13, 13, 13, 0.9);
+  transform: scale(1.05);
+}
+
+/* Subtle animation */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Cursor hint */
+.ci-card {
+  cursor: zoom-in;
+}
+.ci-citation {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 0.35rem;
+  margin-left: 0;
+}

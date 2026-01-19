@@ -7,10 +7,12 @@ import imgPaisaje from "../assets/vinetas/Paisaje.jpeg";                  // pai
 import imgVerde from "../assets/vinetas/Distintos tonos de verdes.jpg";    // o Distintos tonos de verdes.jpg
 import imgHablar from "../assets/vinetas/Hablar desde un lugar.jpg";
 import imgBrisa from "../assets/vinetas/Cuando la brisa llega y el sol se queda.jpg"; 
+import imgpaije from "../assets/vinetas/paisaje2.jpg"; 
+import imgcmezcla from "../assets/vinetas/la cínica de la mezcla.jpg"; 
 
 const vinetas = [
   {
-    id: "paisaje",
+    id: "paisajecanero",
     title: "Paisaje cañero",
     subtitle: "Pensar la caña como paisaje y no solo como cultivo.",
     image: imgPaisaje,
@@ -33,6 +35,18 @@ const vinetas = [
     subtitle: "Adentrarse en la hacienda y ver lo que la velocidad oculta.",
     image: imgBrisa,
   },
+  {
+    id: "paisaje",
+    title: "Paisaje",
+    subtitle: "La piel habitada: memoria y dolor en la tierra cañera.",
+    image: imgpaije,
+  },
+  {
+    id: "cmezcla",
+    title: "La cínica mezcla de lo dulce y barato",
+    subtitle: "Lo barato que mata: costos invisibles del azúcar.",
+    image: imgcmezcla,
+  },
 ];
 
 function Vinetas() {
@@ -44,10 +58,8 @@ function Vinetas() {
           Mirar el paisaje cañero desde otros lugares
         </h1>
         <p className="vinetas-description">
-          Estas viñetas reúnen fragmentos de viajes, conversaciones y
-          escenas que permiten ver la caña y sus alrededores desde
-          distintos verdes, cuerpos y memorias. Cada imagen abre una
-          puerta a un texto más extenso.
+          Viñetas de sensibilidades es una sección compuesta por recuadros que cuentan pequeñas historias. Aquí se reúnen fragmentos de pensamientos, notas de salidas de campo y opiniones construidas. Son miradas situadas sobre el paisaje cañero y la agroindustria de la caña de azúcar, que buscan capturar sensaciones, tensiones y preguntas que emergen en el recorrido. 
+
         </p>
       </section>
 

@@ -36,6 +36,37 @@
   color: #333333;
 }
 
+/* Footnote styles */
+.footnote-ref {
+  text-decoration: none;
+  font-size: 0.85em;
+  vertical-align: super;
+  color: black;
+  margin-left: 2px;
+}
+
+.metodologia-footnotes {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: rgba(0,0,0,0.75);
+}
+
+.metodologia-footnotes ol {
+  margin: 0.25rem 0 0 1.05rem;
+  padding: 0;
+}
+
+.metodologia-footnotes li {
+  margin: 0.35rem 0;
+}
+
+.footnote-back {
+  text-decoration: none;
+  margin-left: 0.5rem;
+  font-size: 0.95em;
+  color: black;
+}
+
 /* ====== Timeline ====== */
 
 .timeline-section {
@@ -52,13 +83,16 @@
   top: 0.5rem;
   bottom: 0.5rem;
   width: 2px;
-  transform: translateX(-50%);
+  /* usar margen negativo para evitar problemas de sub-pixel */
+  transform: none;
+  margin-left: -1px;
   background: linear-gradient(
     to bottom,
     rgba(183, 191, 117, 0.9),
     rgba(164, 166, 114, 0.7)
   );
   opacity: 0.7;
+  z-index: 1; /* por debajo del punto */
 }
 
 /* Contenedor de items */
@@ -70,6 +104,7 @@
 .timeline-item {
   position: relative;
   display: flex;
+  width: 100%;
   margin: 2.4rem 0;
 }
 
@@ -78,12 +113,15 @@
   position: absolute;
   left: 50%;
   top: 0.9rem;
-  transform: translateX(-50%);
+  /* centrar con margen negativo igual a la mitad del ancho del punto (14px/2 = 7px) */
+  transform: none;
+  margin-left: -7px;
   width: 14px;
   height: 14px;
   border-radius: 50%;
   background-color: #b7bf75;
   box-shadow: 0 0 0 4px rgba(242, 242, 242, 0.95);
+  z-index: 2; /* encima de la línea */
 }
 
 /* Tarjeta de contenido */
@@ -94,6 +132,35 @@
   padding: 0.95rem 1.3rem 1.05rem 1.3rem;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(217, 197, 180, 0.9);
+}
+
+/* Animación de aparición al hacer scroll */
+.timeline-item {
+  --delay: 0ms; /* se puede ajustar desde JS */
+}
+
+.timeline-card {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 600ms cubic-bezier(.15,.9,.35,1), opacity 600ms ease;
+  transition-delay: var(--delay);
+  will-change: transform, opacity;
+}
+
+.timeline-dot {
+  transform: scale(0.85);
+  opacity: 0;
+  transition: transform 420ms cubic-bezier(.2,.8,.2,1), opacity 420ms ease;
+}
+
+.timeline-item.in-view .timeline-card {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.timeline-item.in-view .timeline-dot {
+  transform: scale(1);
+  opacity: 1;
 }
 
 /* Izquierda / derecha del eje */
@@ -187,3 +254,809 @@
     max-width: 100%;
   }
 }
+
+/* ====== EJES: VALLA INTERACTIVA ====== */
+
+.axes-section {
+  padding: 0.6rem 2rem 1.8rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.billboard-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  filter: grayscale(6%);
+}
+
+.billboard-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: rotate(-1deg);
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.22));
+}
+
+/* botón punto */
+.billboard-point {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  padding: 0.35rem 0.55rem;
+  cursor: pointer;
+
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.86);
+
+  backdrop-filter: blur(6px);
+  transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+  z-index: 5;
+}
+
+.billboard-point:hover {
+  transform: translate(-50%, -50%) scale(1.03);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.16);
+}
+
+.billboard-point-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.76);
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.10);
+  flex: 0 0 auto;
+}
+
+.billboard-point-active {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  box-shadow: 0 16px 26px rgba(0, 0, 0, 0.18);
+}
+
+.billboard-point-active .billboard-point-dot {
+  background: rgba(25, 25, 25, 0.92);
+  box-shadow: 0 0 0 4px rgba(25, 25, 25, 0.16);
+}
+
+.billboard-point-label {
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Panel que se expande */
+.axis-panel {
+  max-width: 980px;
+  margin: 1.05rem auto 0 auto;
+
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  border-radius: 18px;
+  padding: 1.1rem 1.15rem;
+
+  backdrop-filter: blur(7px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.10);
+}
+
+.axis-panel-inner {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  color: rgba(0, 0, 0, 0.86);
+}
+
+.axis-title {
+  margin: 0 0 0.4rem 0;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 1.15rem;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.axis-subtitle {
+  margin: 0.85rem 0 0.35rem 0;
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.axis-text {
+  margin: 0 0 0.75rem 0;
+  line-height: 1.55;
+  font-size: 0.98rem;
+}
+
+.axis-close {
+  margin-top: 0.85rem;
+}
+
+/* espacio para imágenes futuras */
+.axis-media {
+  margin-top: 0.9rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.axis-media img {
+  width: 240px;
+  max-width: 100%;
+  border-radius: 14px;
+  display: block;
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.14);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive: compacta etiquetas */
+@media (max-width: 768px) {
+  .axes-section {
+    padding: 0.6rem 1.2rem 1.6rem 1.2rem;
+  }
+
+  .billboard-point {
+    padding: 0.28rem 0.45rem;
+    font-size: 0.78rem;
+    gap: 0.45rem;
+  }
+
+  .billboard-point-label {
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .axis-panel {
+    border-radius: 16px;
+  }
+}
+
+/* =========================
+   Ejes (chips) — versión verde + más bonita
+   ========================= */
+
+/* Ajusta este verde al que ya vienes usando */
+:root {
+  --cana-green: #5f7a3a;
+  --cana-green-dark: #3f5a22;
+  --chip-bg: rgba(255, 255, 255, 0.86);
+  --chip-border: rgba(0, 0, 0, 0.12);
+}
+
+/* ====== VALLA CON PERSPECTIVA (PLANO) ====== */
+
+.billboard-stage {
+  perspective: 1100px;
+  perspective-origin: 25% 66%;
+}
+
+.billboard-wrap {
+  position: relative;
+  width: min(980px, 95%);
+  margin: 0 auto;
+}
+
+/* Imagen NO se rota */
+.billboard-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Solo el overlay se rota */
+.billboard-overlay {
+  position: absolute;
+  inset: 0; /* top/right/bottom/left: 0 */
+  pointer-events: none; /* para que no bloquee si algo falla */
+  transform-style: preserve-3d;
+  rotate: 15deg;
+
+  /* ✅ Aquí va la perspectiva/rotación SOLO para títulos/puntos */
+  transform: rotateY(35deg) rotateX(25deg);
+  transform-origin: 45% 50%;
+}
+
+/* Reactiva click SOLO en los botones */
+.billboard-point {
+  pointer-events: auto;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+
+.billboard-point {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  color: rgba(0, 0, 0, 0.86);
+  z-index: 5;
+}
+
+.billboard-point:hover {
+  transform: translate(-50%, -50%) scale(1.03);
+}
+
+.billboard-point:focus-visible {
+  outline: none;
+}
+
+/* Punto con acento verde */
+.billboard-point-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--cana-green);
+  box-shadow:
+    0 0 0 4px rgba(95, 122, 58, 0.18),
+    0 10px 18px rgba(0, 0, 0, 0.10);
+  flex: 0 0 auto;
+}
+
+/* Chip premium */
+.billboard-point-chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  background: var(--chip-bg);
+  border: 1px solid rgba(95, 122, 58, 0.22); /* borde con verde */
+  border-radius: 16px;
+  padding: 0.5rem 0.72rem;
+
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 14px 26px rgba(0, 0, 0, 0.12);
+
+  transform: rotate(-1deg) rotateY(-6deg);
+  transform-origin: left center;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+
+/* Línea/acento vertical verde a la izquierda */
+.billboard-point-chip::before {
+  content: "";
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(95, 122, 58, 0.95),
+    rgba(95, 122, 58, 0.35)
+  );
+  border-radius: 999px;
+  margin-right: 0.55rem;
+  align-self: stretch;
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  bottom: 8px;
+}
+
+/* Para que el ::before no tape el contenido */
+.billboard-point-chip {
+  position: relative;
+  padding-left: 1.15rem; /* espacio para la barrita */
+}
+
+/* Título con verde */
+.billboard-point-chipTitle {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 400;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.05;
+
+  color: var(--cana-green);
+}
+
+/* Hint más fino */
+.billboard-point-chipHint {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 0.74rem;
+  opacity: 0.72;
+  margin-top: 0.14rem;
+  letter-spacing: 0.01em;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+/* Hover: más elegante */
+.billboard-point:hover .billboard-point-chip {
+  background: rgba(255, 255, 255, 0.93);
+  border-color: rgba(95, 122, 58, 0.35);
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.14);
+  transform: rotate(-0.2deg);
+}
+
+/* Activo: se “enciende” */
+.billboard-point-active .billboard-point-dot {
+  background: var(--cana-green-dark);
+  box-shadow:
+    0 0 0 4px rgba(63, 90, 34, 0.20),
+    0 12px 22px rgba(0, 0, 0, 0.14);
+}
+
+.billboard-point-active .billboard-point-chip {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(95, 122, 58, 0.48);
+  box-shadow: 0 22px 38px rgba(0, 0, 0, 0.16);
+}
+
+/* Focus accesible */
+.billboard-point:focus-visible .billboard-point-chip {
+  border-color: rgba(95, 122, 58, 0.65);
+  box-shadow:
+    0 0 0 3px rgba(95, 122, 58, 0.18),
+    0 18px 30px rgba(0, 0, 0, 0.14);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .billboard-point-chip {
+    padding: 0.44rem 0.62rem;
+    border-radius: 14px;
+    padding-left: 1.05rem;
+  }
+
+  .billboard-point-chipTitle {
+    font-size: 0.82rem;
+    max-width: 190px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .billboard-point-chipHint {
+    font-size: 0.7rem;
+  }
+}
+
+/* ===== Talleres colaborativos (misma estética/paleta) ===== */
+
+.ws2 {
+  width: min(1120px, 92%);
+  margin: 2.2rem auto 4rem auto;
+  color: #0d0d0d;
+}
+
+/* Intro centrada */
+.ws2-intro {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.ws2-overline {
+  margin: 0 0 0.75rem 0;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #A4A672;
+}
+
+/* Prosa (texto seguido) */
+.ws2-prose {
+  background: rgba(242, 242, 242, 0.62);
+  border: 1px solid rgba(164, 166, 114, 0.28);
+  border-radius: 16px;
+  padding: 1.05rem 1.15rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 16px 30px rgba(13, 13, 13, 0.10);
+}
+
+.ws2-prose-center {
+  width: min(860px, 100%);
+  margin: 0 auto;
+}
+
+.ws2-prose-full {
+  width: min(980px, 100%);
+  margin: 0 auto;
+}
+
+.ws2-text {
+  margin: 0;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: rgba(13, 13, 13, 0.92);
+}
+
+.ws2-text + .ws2-text {
+  margin-top: 0.85rem;
+}
+
+/* Bloques: que se sienta continuo */
+.ws2-block {
+  margin-top: 2.1rem;
+}
+
+.ws2-head {
+  margin: 0 0 0.65rem 0;
+}
+
+.ws2-head-right {
+  text-align: right;
+}
+
+.ws2-title {
+  margin: 0;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0d0d0d;
+}
+
+/* Split compacto: slider pegado, sin “bloque” separado */
+.ws2-split {
+  display: grid;
+  gap: 1.05rem;
+  align-items: start;
+}
+
+.ws2-split-rightMedia {
+  grid-template-columns: 1.25fr 0.75fr;
+}
+
+.ws2-split-leftMedia {
+  grid-template-columns: 0.75fr 1.25fr;
+}
+
+.ws2-media {
+  position: sticky;
+  top: 1.1rem;
+  align-self: start;
+}
+
+/* Slider inline (sin captions debajo) */
+.inl-slider {
+  background: rgba(217, 197, 180, 0.18);
+  border: 1px solid rgba(164, 166, 114, 0.30);
+  border-radius: 16px;
+  padding: 0.65rem;
+  box-shadow: 0 14px 26px rgba(13, 13, 13, 0.10);
+}
+
+.inl-frame {
+  width: 100%;
+  aspect-ratio: 3 / 4; /* más vertical, menos “aire” abajo */
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(242, 242, 242, 0.78);
+  border: 1px solid rgba(13, 13, 13, 0.10);
+}
+
+.inl-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Controles MUY compactos */
+.inl-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.55rem;
+  margin-top: 0.5rem;
+}
+
+.inl-btn {
+  border: 1px solid rgba(164, 166, 114, 0.45);
+  background: rgba(242, 242, 242, 0.76);
+  color: rgba(13, 13, 13, 0.85);
+  border-radius: 999px;
+  padding: 0.25rem 0.55rem;
+  cursor: pointer;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  line-height: 1;
+}
+
+.inl-dots {
+  display: flex;
+  gap: 0.28rem;
+  justify-content: center;
+  flex: 1;
+}
+
+.inl-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(164, 166, 114, 0.55);
+  background: rgba(242, 242, 242, 0.85);
+  cursor: pointer;
+}
+
+.inl-dot-active {
+  background: rgba(164, 166, 114, 0.85);
+}
+
+/* Empty */
+.inl-slider-empty .inl-empty {
+  aspect-ratio: 3 / 4;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(242, 242, 242, 0.8);
+  border: 1px dashed rgba(164, 166, 114, 0.55);
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  color: rgba(13, 13, 13, 0.65);
+  text-align: center;
+  padding: 0 0.75rem;
+}
+
+/* Conclusión abajo, sin imágenes */
+.ws2-conclusion {
+  margin-top: 2.3rem;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .ws2-split-rightMedia,
+  .ws2-split-leftMedia {
+    grid-template-columns: 1fr;
+  }
+
+  .ws2-media {
+    position: static;
+  }
+
+  .ws2-head-right {
+    text-align: left;
+  }
+
+  .inl-frame {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Header estilo metodología */
+.ws2-header {
+  width: min(980px, 100%);
+  margin: 0 auto 1.6rem auto;
+}
+
+/* Reutiliza estetica de metodología */
+.ws2-title-main {
+  margin-top: 0.15rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Intro integrada (ya no “bloque aparte centrado”) */
+.ws2-introProse {
+  background: rgba(242, 242, 242, 0.62);
+  border: 1px solid rgba(164, 166, 114, 0.28);
+  border-radius: 16px;
+  padding: 1.05rem 1.15rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 16px 30px rgba(13, 13, 13, 0.10);
+}
+
+/* Subtítulos de secciones */
+.ws2-subtitle {
+  margin: 0;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(13, 13, 13, 0.92);
+}
+
+/* Texto: arregla espacios y respeta saltos sin <br/> */
+.ws2-text-pre {
+  white-space: pre-line;
+}
+
+/* Ajuste fino de spacing entre párrafos */
+.ws2-prose .ws2-text + .ws2-text {
+  margin-top: 0.75rem; /* antes estaba más grande */
+}
+
+/* Conclusión pegada visualmente, sin parecer “otro bloque” */
+.ws2-conclusionInline {
+  margin-top: 1rem; /* pegada pero con respiración mínima */
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(164, 166, 114, 0.22);
+}
+
+/* ====== FIN Ejes (chips) ====== */
+
+/* Mantén la imagen como la tienes (estática) */
+.billboard-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Overlay: NO lo transformes en 3D, solo sirve de capa */
+.billboard-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none; /* overlay no bloquea */
+  transform: none !important; /* clave */
+}
+
+/* Botón: plano (hitbox correcto) */
+.billboard-point {
+  pointer-events: auto;
+  position: absolute;
+  transform: translate(-50%, -50%); /* solo centrar */
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 5;
+}
+
+/* ✅ SOLO el chip se “deforma” para dar coherencia con la valla */
+.billboard-point-chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  background: var(--chip-bg);
+  border: 1px solid rgba(95, 122, 58, 0.22);
+  border-radius: 16px;
+  padding: 0.5rem 0.72rem;
+
+  backdrop-filter: blur(8px);
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.12);
+
+  /* 👇 aquí va tu “perspectiva” visual SOLO del texto/chip */
+  transform: perspective(1100px) rotateY(35deg) rotateX(25deg) rotate(-1deg);
+  transform-origin: 45% 50%;
+
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+/* ====== ARTÍCULO 2 COLUMNAS (panel de eje) ====== */
+.axis-panel {
+  width: min(1100px, 92vw);
+  margin: 22px auto 40px;
+}
+
+.axis-panel-inner {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 18px;
+  padding: 26px 26px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* El “look” de revista */
+.axis-article {
+  column-count: 2;
+  column-gap: 42px;
+  column-fill: balance;
+}
+
+.axis-title,
+.axis-subtitle,
+.axis-text,
+.axis-figure {
+  break-inside: avoid;
+}
+
+.axis-title {
+  font-size: 22px;
+  line-height: 1.15;
+  margin: 0 0 10px;
+  color: #2d6b4f; /* tu verde */
+}
+
+.axis-subtitle {
+  font-size: 16px;
+  margin: 16px 0 8px;
+  color: #2d6b4f;
+}
+
+.axis-text {
+  font-size: 14.5px;
+  line-height: 1.55;
+  margin: 0 0 12px;
+  color: #1f1f1f;
+}
+
+.axis-text.axis-close {
+  margin-top: 14px;
+}
+
+/* Figuras dentro del flujo de columnas */
+.axis-figures {
+  margin: 10px 0 14px;
+}
+
+.axis-figure {
+  margin: 0 0 14px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.10);
+}
+
+.axis-figure-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.axis-figure-cap {
+  padding: 10px 12px 12px;
+  font-size: 12px;
+  line-height: 1.35;
+  color: #2a2a2a;
+}
+
+.axis-figure-title {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #2d6b4f;
+}
+
+.axis-figure-note {
+  display: block;
+  opacity: 0.9;
+}
+
+/* Responsive: 1 columna */
+@media (max-width: 900px) {
+  .axis-article {
+    column-count: 1;
+    column-gap: 0;
+  }
+}
+
+.axis-panel {
+  position: relative;
+}
+
+.axis-scrollTop {
+  position: absolute;
+  right: 7%;
+  bottom: 0.7%;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%; /* círculo perfecto */
+  border: none; /* usar si quieres borde: 1px solid rgba(0,0,0,0.08) */
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  background: rgba(45, 107, 79, 0.95);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+
+  display: flex; /* centra contenido */
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+}
+
+.axis-scrollTop:hover {
+  transform: translateY(-2px);
+}
+

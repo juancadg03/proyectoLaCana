@@ -4,28 +4,88 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import "./vinetaDetalle.css";
 
 const vinetasContent = {
-  paisaje: {
+  "paisajecanero": {
+    /* ====== VIÑETA: paisaje cañero (con links a Archivos) ====== */
     title: "Paisaje cañero",
-    intro:
-      "Escrito por Gabriela Cobo",
+    intro: "Escrito por Gabriela Cobo",
     body: [
-    "Hablar de paisaje es hablar de una relación: la del individuo con su entorno, pero también la de una mirada con aquello que decide ver (Martínez de Pisón, 2010). Esa mirada nunca es neutra; está hecha de recuerdos, experiencias, saberes y afectos que transforman el territorio en algo más que un fondo. En ese gesto, cuando la tierra deja de ser solo superficie útil y empieza a hablarnos, es cuando nace el paisaje. No como una imagen, sino como un modo de estar en el mundo.",
-    "Por eso se dice que el paisaje es expresión del territorio: un tejido que reúne lo ecológico, lo histórico, lo sensible y lo geográfico (Martínez de Pisón, 2018). El paisaje es una suma de todo eso, pero también un lenguaje. Una forma de nombrar lo que, sin ser dicho, ya nos afecta. Aprender a ver un paisaje implica aprender a leerlo, a reconocer en él las huellas del pasado y las tensiones del presente (Ingold, 1993).",
-    "Desde esta mirada, los paisajes no son escenarios pasivos sino construcciones culturales. Surgen de la interacción entre las relaciones sociales y el mundo natural; entre la memoria y la práctica cotidiana (Anderman, 2008). Todo paisaje es político: encarna decisiones, silencios y formas de ordenar lo visible (Delgado, 2010). Naturaliza modos de habitar, de valorar la vida, de imaginar el progreso. Y al mismo tiempo es sensible, cualitativo, heterogéneo: una experiencia en la que percepción, emoción y memoria se trenzan.",
-    "Fue desde allí que comenzó mi interés por el paisaje. Me llamó la atención esa intersección entre lo material y lo ideológico, entre el espacio real y lo que proyectamos sobre él. Siempre he sentido que el espacio habla de lo que somos y de aquello que nos habita. Por eso, cuando empecé a pensar en el paisaje cañero, el interés vino acompañado de dudas.",
-    "¿La caña puede considerarse un paisaje? ¿O es simplemente un cultivo? ¿Cómo la ven los demás? ¿Qué significa retomar esta categoría en un lugar donde la caña suele asociarse más a la política, a las élites y al conflicto que a la materialidad misma de la planta?",
-    "Me di cuenta de que algo escapaba a la conversación pública: aunque la caña define gran parte de la visualidad del Valle y de Cali, se habla poco de ella como paisaje. La normalizamos, la pasamos de largo. Asumimos que siempre ha estado ahí, como si fuera un telón fijo, un fondo naturalizado. Pero ¿qué hace que algo sea paisaje? Si el paisaje es expresión del territorio, ¿qué expresa la caña en este valle? ¿Cómo leer un monocultivo que ha sido símbolo del extractivismo y del neocolonialismo?",
-    "Con el tiempo entendí que aquello que me inquietaba tenía que ver con un supuesto muy extendido: que un paisaje debe ser bello. Y el paisaje cañero, más que bello, suele ser repetitivo, monótono, abrumador. Pero eso no lo excluye de ser paisaje; al contrario, lo vuelve aún más significativo. Dentro de la ciudad, la caña se vuelve difusa, aparece en fragmentos; pero en muchas zonas de Cali, o en los municipios del Valle y el Cauca, es un vecino constante y en algunos contextos hasta violento. Y, aun así, hay una distancia: la ciudad convive con la caña, pero no siempre la reconoce.",
-    "Fue entonces cuando entendí que el paisaje no es solo material: es, sobre todo, narrado (Bravo, 2010). Existe en la forma en que lo representamos, en cómo se institucionaliza, en cómo se cuela en lo cotidiano. El paisaje cañero no es evidente a primera vista, pero sí es un campo de conflicto. Cali, una ciudad atravesada por migraciones, memorias diversas y profundas desigualdades, ha construido su relación con la caña desde múltiples lugares. La pedagogía, la industria, la política, la cultura y la infraestructura han moldeado esta imagen que hoy, aunque parezca natural, es resultado de decisiones históricas concretas.",
-    "Aquí aparece una idea clave: el paisaje cañero como paisaje de blanqueamiento, donde el territorio se reconfigura para parecer moderno, productivo, “civilizado”. Se instala un discurso de desarrollo y de riqueza que no solo ordena el territorio, sino que borra otros paisajes posibles: paisajes campesinos, indígenas, afrodescendientes; paisajes de montaña, de agua, de borde (Perafán, 2025).",
-    "En nombre del progreso, se pule la imagen del Valle hasta hacerla homogénea. Y con esa homogeneidad viene la distancia: ya no es un espacio para todos, sino para los ingenieros, los técnicos, los expertos. Una tierra administrada desde arriba, donde muchos habitantes terminan sintiéndose foráneos en su propio territorio. Ese blanqueamiento territorial no solo reconfigura el espacio; también produce desarraigo (Perafán, 2025).",
-    "Mirar este paisaje es mirar una historia de regulación del territorio basada, muchas veces, en ver el entorno como un recurso a explotar. Es también enfrentarse a tensiones contemporáneas: debates ambientales, patrimonialización del paisaje, eventos internacionales como la COP16, la soberanía alimentaria y energética, los recursos naturales, el conflicto por la tierra. La caña está ahí, en el lente.",
-    "Pero preguntarse por el paisaje cañero no significa quedarse atrapada en el monocultivo ni en el pesimismo que suele generar. También es recordar que Cali no es solo caña: “Cali también es loma”, es río, borde, cerro, barrio, humedad, y en el Valle es una diversidad de paisajes y formas de relacionarse con este mismo paisaje cañero. Ver más allá de esa planicie verde es volver a preguntarnos cómo queremos habitar este territorio. ¿Qué otros paisajes podemos imaginar? ¿Qué relaciones con el entorno queremos construir? ¿Cómo abrir espacio a otros verdes, otras memorias, otras formas de estar?",
-    "Reconocer el paisaje cañero, incluso como símbolo de ideologías hegemónicas, no es aceptarlo pasivamente. Es entenderlo como parte de la historia de la región, de las luchas sociales y de las maneras diversas de habitar. Sobre todo, es una posibilidad para pensar otras imágenes y otras formas de ver.",
-    "Porque el paisaje no es algo que simplemente se contempla: es algo que se pregunta, se discute y se transforma.",
-    "Y si este paisaje cañero se impuso como futuro, como horizonte posible, como promesa “blanca”, entonces cabe preguntarse: ¿qué otras formas de resistencia, de imaginación y de creación ciudadana pueden abrirse para reclamar otros paisajes y otras maneras de habitar el territorio?"
+      <>
+        Hablar de paisaje es hablar de una relación: la del individuo con su entorno, pero también la de una
+        mirada con aquello que decide ver{" "}
+        (<Link to="/archivos#refs-paisaje-canero" className="ref-inline">Martínez de Pisón, 2010</Link>). Esa
+        mirada nunca es neutra; está hecha de recuerdos, experiencias, saberes y afectos que transforman el
+        territorio en algo más que un fondo. En ese gesto, cuando la tierra deja de ser solo superficie útil y
+        empieza a hablarnos, es cuando nace el paisaje. No como una imagen, sino como un modo de estar en el
+        mundo.
+      </>,
+
+      <>
+        Por eso se dice que el paisaje es expresión del territorio: un tejido que reúne lo ecológico, lo
+        histórico, lo sensible y lo geográfico{" "}
+        (<Link to="/archivos#refs-paisaje-canero" className="ref-inline">Martínez de Pisón, 2018</Link>). El
+        paisaje es una suma de todo eso, pero también un lenguaje. Una forma de nombrar lo que, sin ser dicho,
+        ya nos afecta. Aprender a ver un paisaje implica aprender a leerlo, a reconocer en él las huellas del
+        pasado y las tensiones del presente{" "}
+        (<Link to="/archivos#refs-paisaje-canero" className="ref-inline">Ingold, 1993</Link>).
+      </>,
+
+      <>
+        Desde esta mirada, los paisajes no son escenarios pasivos sino construcciones culturales. Surgen de la
+        interacción entre las relaciones sociales y el mundo natural; entre la memoria y la práctica cotidiana{" "}
+        (<Link to="/archivos#refs-paisaje-canero" className="ref-inline">Andermann, 2008</Link>). Todo paisaje
+        es político: encarna decisiones, silencios y formas de ordenar lo visible{" "}
+        (<Link to="/archivos#refs-paisaje-canero" className="ref-inline">Delgado, 2010</Link>). Naturaliza modos
+        de habitar, de valorar la vida, de imaginar el progreso. Y al mismo tiempo es sensible, cualitativo,
+        heterogéneo: una experiencia en la que percepción, emoción y memoria se trenzan.
+      </>,
+
+      "Fue desde allí que comenzó mi interés por el paisaje. Me llamó la atención esa intersección entre lo material y lo ideológico, entre el espacio real y lo que proyectamos sobre él. Siempre he sentido que el espacio habla de lo que somos y de aquello que nos habita. Por eso, cuando empecé a pensar en el paisaje cañero, el interés vino acompañado de dudas.",
+
+      "¿La caña puede considerarse un paisaje? ¿O es simplemente un cultivo? ¿Cómo la ven los demás? ¿Qué significa retomar esta categoría en un lugar donde la caña suele asociarse más a la política, a las élites y al conflicto que a la materialidad misma de la planta?",
+
+      "Me di cuenta de que algo escapaba a la conversación pública: aunque la caña define gran parte de la visualidad del Valle y de Cali, se habla poco de ella como paisaje. La normalizamos, la pasamos de largo. Asumimos que siempre ha estado ahí, como si fuera un telón fijo, un fondo naturalizado. Pero ¿qué hace que algo sea paisaje? Si el paisaje es expresión del territorio, ¿qué expresa la caña en este valle? ¿Cómo leer un monocultivo que ha sido símbolo del extractivismo y del neocolonialismo?",
+
+      "Con el tiempo entendí que aquello que me inquietaba tenía que ver con un supuesto muy extendido: que un paisaje debe ser bello. Y el paisaje cañero, más que bello, suele ser repetitivo, monótono, abrumador. Pero eso no lo excluye de ser paisaje; al contrario, lo vuelve aún más significativo. Dentro de la ciudad, la caña se vuelve difusa, aparece en fragmentos; pero en muchas zonas de Cali, o en los municipios del Valle y el Cauca, es un vecino constante y en algunos contextos hasta violento. Y, aun así, hay una distancia: la ciudad convive con la caña, pero no siempre la reconoce.",
+
+      <>
+        Fue entonces cuando entendí que el paisaje no es solo material: es, sobre todo, narrado{" "}
+        (<Link to="/archivos#refs-paisaje-canero" className="ref-inline">Bravo, 2010</Link>). Existe en la forma
+        en que lo representamos, en cómo se institucionaliza, en cómo se cuela en lo cotidiano. El paisaje
+        cañero no es evidente a primera vista, pero sí es un campo de conflicto. Cali, una ciudad atravesada
+        por migraciones, memorias diversas y profundas desigualdades, ha construido su relación con la caña
+        desde múltiples lugares. La pedagogía, la industria, la política, la cultura y la infraestructura han
+        moldeado esta imagen que hoy, aunque parezca natural, es resultado de decisiones históricas concretas.
+      </>,
+
+      <>
+        Aquí aparece una idea clave: el paisaje cañero como paisaje de blanqueamiento, donde el territorio se
+        reconfigura para parecer moderno, productivo, “civilizado”. Se instala un discurso de desarrollo y de
+        riqueza que no solo ordena el territorio, sino que borra otros paisajes posibles: paisajes campesinos,
+        indígenas, afrodescendientes; paisajes de montaña, de agua, de borde{" "}
+        (<Link to="/archivos#refs-paisaje-canero" className="ref-inline">Perafán, 2025</Link>).
+      </>,
+
+      <>
+        En nombre del progreso, se pule la imagen del Valle hasta hacerla homogénea. Y con esa homogeneidad
+        viene la distancia: ya no es un espacio para todos, sino para los ingenieros, los técnicos, los
+        expertos. Una tierra administrada desde arriba, donde muchos habitantes terminan sintiéndose foráneos
+        en su propio territorio. Ese blanqueamiento territorial no solo reconfigura el espacio; también produce
+        desarraigo{" "}
+        (<Link to="/archivos#refs-paisaje-canero" className="ref-inline">Perafán, 2025</Link>).
+      </>,
+
+      "Mirar este paisaje es mirar una historia de regulación del territorio basada, muchas veces, en ver el entorno como un recurso a explotar. Es también enfrentarse a tensiones contemporáneas: debates ambientales, patrimonialización del paisaje, eventos internacionales como la COP16, la soberanía alimentaria y energética, los recursos naturales, el conflicto por la tierra. La caña está ahí, en el lente.",
+
+      "Pero preguntarse por el paisaje cañero no significa quedarse atrapada en el monocultivo ni en el pesimismo que suele generar. También es recordar que Cali no es solo caña: “Cali también es loma”, es río, borde, cerro, barrio, humedad, y en el Valle es una diversidad de paisajes y formas de relacionarse con este mismo paisaje cañero. Ver más allá de esa planicie verde es volver a preguntarnos cómo queremos habitar este territorio. ¿Qué otros paisajes podemos imaginar? ¿Qué relaciones con el entorno queremos construir? ¿Cómo abrir espacio a otros verdes, otras memorias, otras formas de estar?",
+
+      "Reconocer el paisaje cañero, incluso como símbolo de ideologías hegemónicas, no es aceptarlo pasivamente. Es entenderlo como parte de la historia de la región, de las luchas sociales y de las maneras diversas de habitar. Sobre todo, es una posibilidad para pensar otras imágenes y otras formas de ver.",
+
+      "Porque el paisaje no es algo que simplemente se contempla: es algo que se pregunta, se discute y se transforma.",
+
+      "Y si este paisaje cañero se impuso como futuro, como horizonte posible, como promesa “blanca”, entonces cabe preguntarse: ¿qué otras formas de resistencia, de imaginación y de creación ciudadana pueden abrirse para reclamar otros paisajes y otras maneras de habitar el territorio?"
     ],
   },
+  
   "distintos-tonos-de-verde": {
     title: "Distintos tonos de verde",
     intro:
@@ -94,6 +154,36 @@ const vinetasContent = {
     "Es tan fácil ver todo esto desde la carretera: un paisaje ordenado, verde, homogéneo. Pero adentro hay trabajo duro, jornadas pesadas, fuerza física y largos desplazamientos. No se trata de romantizar, sino de pensar en los rostros detrás de cada surco.",
     "«Aquí no hay animales… bueno, zorritos cañeros, pero ya.» Y también pensar en los rostros que ya no se ven: animales, árboles, ríos… y los rostros del poder, que se esconden bajo discursos de desarrollo y productividad.",
     "Adentrarse en el cañal es ver la antropología en aquello que la velocidad desdibuja: los miles de verdes que parecen iguales, pero que guardan mundos distintos."
+    ],
+  },
+  "paisaje": {
+    title: "Paisaje",
+    intro: "Escrito por JHUCONHACHE.",
+    body: [
+      "Separar la obra del artista, es como separar la piel de la carne humana, aun sabiendo que “las cosas no son de apariencia sino de esencia” como afirma Le Corbusier, es ver el sutil detalle de las diferentes estéticas.",
+      "¿Separar el paisaje de lo humano?",
+      "Contemplado, replicado, mutilado, distante, sereno, colorido, tarareado, ilustrado, enmarcado, árido, productivo, recorrido, silenciado, proclamado, antiguo, abandonado.",
+      "Yace el paisaje en la piel humana, en lo cotidiano sin contemplación, una situación que para los simples ojos no reflexivos del detalle, han convertido la palabra en un hecho efímero sin importancia. En la actualidad es común escuchar que “las cosas hacen o se han vuelto un paisaje” pero no se cuestiona dicha afirmación, pues los objetos y el contexto se convierte en paisaje cuando se pierde la relación íntima del yo en la gran escala, pues la pérdida de dicha escala hace que se olvide el valor de lo íntimo, de la historia, de la piel habitada, piel que ya no es piel y del ritmo que conlleva la contemplación del paisaje que es similar al ritmo que marca la vida en la posmodernidad, una mirada sin contemplación, sin cuestionamientos, pues el contexto construido ser paisaje se vuelve genérico, sin contexto, producto de un capitalismo tardío o sobreescalado, pero como luchar con este abandono, cuando dicho paisaje ha marcado una huella romántica para muchos y dolorosa para pocos, es entonces que el bienestar común prima sobre el dolor individual.",
+      "Entonces: ¿Debemos callar el dolor de los otros?",
+      "Contemplamos el dolor del otro, lo cantamos, lo vanagloriamos, lo olvidamos porque no es nuestro porque lo convertimos en paisaje; es así que el paisaje cañero calla y mutila la historia de sus trabajadores, una tierra del olvido, un dolor paisajístico que ha sido promovido sin rostro, sin voz, sin huella."
+    ],
+  },
+  "cmezcla": {
+    title: "La cínica mezcla de lo dulce y barato",
+    intro: "Escrito por Manuela Cobo",
+    body: [
+      "La caña, el azúcar, los dulces no son productos inocentes. Detrás de ellos toda una industria mortífera que se esconde detrás de slogans, imágenes coloridas, leyes que rozan la inmoralidad. No olvidemos las mascotas de la comida chatarra: el Osito Bimbo, el Tigre Toño, el gallo Cornelio o Melvin. ¡No por nada las prohibieron! Hacían ver inocente un producto extremadamente malo para la salud. Pero, sobre todo, formaban parte de una técnica publicitaria que manipulaba abiertamente a los niños (OPS, 2011; Hastings et al., 2006). Y si bien, en este caso, los Estados lograron detener esta aberración, muchos de ellos siguen autorizando y/o ignorando las patrañas de la industria alimenticia. Basta pensar en la permanencia de bebidas azucaradas en escuelas públicas, en la débil regulación de la publicidad digital dirigida a niños, o en el lobby constante contra los impuestos al azúcar y el etiquetado frontal de advertencia. Todo ello a pesar de la evidencia científica que vincula el consumo de azúcares añadidos con obesidad, diabetes tipo 2 y enfermedades cardiovasculares, especialmente en poblaciones infantiles y vulnerables (OMS, 2015; Lustig et al., 2012; Moodie et al., 2013).",
+      "Y esto solo es una ínfima parte de los miles de escándalos en torno a esta industria. En Colombia, empezó con un monocultivo que prometía demasiado: progreso, modernidad, crecimiento económico... Y terminó generando, entre otras cosas, el empobrecimiento general de los agricultores, hasta la degradación de la salud nacional y mundial. Todo para vender ni más ni menos que drogas legales y sobre todo subestimadas. Y sí, los productos con azúcares añadidos son drogas pues son:",
+      "“sustancias que al introducirse al organismo, pueden modificar una o más de sus funciones y generar dependencia; es decir, que después de un cierto tiempo de consumirlas, el cuerpo las necesita para sentirse bien.” (definición de la OMS).",
+      "Lo peor es que se trata de una droga que causa una muerte lenta y silenciosa. Nadie dice que el fulano murió por sobredosis de azúcar. En lugar, se dice que murió de un infarto o de diabetes, enfermedades comunes, y por ende banalizadas.",
+      "¿Y cómo llegamos a crear drogas a partir de la comida? Con técnicas culinarias y químicas basadas en un conocimiento profundo de nuestro sistema de recompensa y mecanismos de saciedad. Estudios probaron que:",
+      "“Los alimentos ultraprocesados se caracterizan por ser hiperpalatables. Este término hace referencia a la anulación de los mecanismos de la saciedad que funcionan habitualmente en el cuerpo y el cerebro. Las combinaciones sensoriales de estos alimentos los hacen, por tanto, menos saciantes, llevando a un consumo excesivo de los mismos.” (Martí del Moral, Calvo & Martínez, 2021, p. 178)",
+      "Resultado: millones de muertes al año por diabetes; 1,6 millones en 2021 sin contar los fallecimientos por enfermedades ligadas a esta enfermedad.",
+      "Crímenes desgraciadamente legales y legitimados por discursos neoliberales que responsabilizan injustamente al consumidor, incluso cuando este es menor de edad.",
+      'These industries frame harm as the result of individual choice rather than corporate practices, thereby resisting effective regulation (Moodie et al., 2013).',
+      "Lo más triste es que, a pesar de las pruebas, estos discursos neoliberales fueron interiorizados por gran parte de la población. Muchos consideran aún que consumir demasiada azúcar es sinónimo de falta de voluntad, de negligencia con sí mismo, y hasta a veces de fragilidad mental por buscar picos constantes de dopamina. Sin embargo, olvidan el impacto del contexto actual de la persona (tanto económico como social) así como también su pasado donde seguramente el azúcar estaba omnipresente, donde el apoyo psicosocial era deficiente o donde simplemente el riesgo del consumo excesivo de azúcar estaba completamente banalizado ya sea por la televisión, los propios familiares o el colegio.",
+      "Todos tienen una parte de la responsabilidad, pero sobre todo el jefe de una agroindustria, el responsable de marketing, los políticos. Los sellos octagonales negros en América Latina o el nutri-score en Europa son importantes pero no pueden ser la única medida que se aplique. Tiene que haber un esfuerzo colectivo. De otro modo, los industriales más “responsables” van a seguir cayendo en quiebra o van a seguir vendiendo sus productos a un precio exorbitante. Tienen que haber regulaciones nacionales y hasta internacionales de la venta de productos nocivos para la salud. No solo de prohibir sino de transformar el valor de los productos, no en función del potencial número de ventas, claramente elevado cuando se trata de una droga, sino según el aporte nutricional. Y no toca hacerlo solo por la salud humana, sino también por la salud ambiental. Si continuamos explotando la tierra como lo hacemos la vamos a agotar hasta matarla y con ella toda posibilidad de seguridad alimentaria, que tanto pretenden defender los capitalistas.",
+      "Claro está, no se pueden hacer tales cambios estructurales sin continuar combatiendo el problema en todas las escalas. De otro modo hay el riesgo de una reventa de estos productos en el mercado negro. Por eso, en paralelo, tienen que seguir habiendo programas de prevención desde el colegio, no solo para prevenir el consumo excesivo de azúcar sino también para prevenir la corrupción y la avaricia."
     ],
   },
 };

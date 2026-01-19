@@ -48,7 +48,7 @@
      - caña: franja de ~420px de alto
      - degradado: cubre toda la pantalla
   */
-  background-size: 620px auto, cover;
+  background-size: 520px auto, cover;
 
   /* El degradado hace efecto “suave” al scroll;
      la caña se mueve normal */
@@ -225,7 +225,7 @@
 
 /* img6 – Camión cañero, justo a la derecha de la cosechadora */
 .collage-img-6 {
-  bottom: -21%;
+  bottom: -3%;
   left: 3%;
   width: 27vw;
   max-width: 700px;
@@ -234,7 +234,7 @@
 
 /* img5 – Tractor, centrado al frente */
 .collage-img-5 {
-  bottom: -18%;
+  bottom: -12%;
   left: 27%;
   width: 25vw;
   max-width: 768px;
@@ -263,8 +263,8 @@
 
 /* img2 – Carrito de guarapo, extremo derecho abajo */
 .collage-img-2 {
-  bottom: -7%;
-  right: -6%;
+  bottom: 0%;
+  right: 0%;
 
   /* HAZLO MÁS GRANDE */
   width: 30vw;        /* más ancho */
@@ -276,8 +276,8 @@
 
 /* img3 – Bus Cañaveral, arriba del carrito */
 .collage-img-3 {
-  bottom: 40%;
-  right: -15%;
+  bottom: 49%;
+  right: -8%;
   width: 24vw;
   max-width: 500px;
   max-height: 500px;

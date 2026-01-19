@@ -8,8 +8,7 @@ import img3 from "../assets/img3.png";
 import img4 from "../assets/img4.png";
 import img5 from "../assets/img5.png";
 import img6 from "../assets/img6.png";
-import img11 from "../assets/img11.png";
-import img8 from "../assets/img8.jpg";
+
 import img9 from "../assets/img9.png";
 import img10 from "../assets/img10.jpeg";
 
@@ -39,7 +38,6 @@ function Home() {
       {/* Collage libre de imágenes */}
       <section className="image-collage-free">
         <div className="collage-layer">
-          <img src={img11} alt="Máquina cosechadora" className="collage-img collage-img-11" />
           <img src={img6}  alt="Camión cañero"       className="collage-img collage-img-6"  />
           <img src={img5}  alt="Tractor"             className="collage-img collage-img-5"  />
           <img src={img1}  alt="Machete"             className="collage-img collage-img-1"  />

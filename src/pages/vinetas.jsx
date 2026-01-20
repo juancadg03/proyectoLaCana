@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import "./vinetas.css";
 
 import imgPaisaje from "../assets/vinetas/Paisaje.jpeg";                  // paisaje cañero
-import imgVerde from "../assets/vinetas/Distintos tonos de verdes.jpg";    // o Distintos tonos de verdes.jpg
-import imgHablar from "../assets/vinetas/Hablar desde un lugar.jpg";
-import imgBrisa from "../assets/vinetas/Cuando la brisa llega y el sol se queda.jpg"; 
+import imgVerde from "../assets/vinetas/Distintos-tonos-de-verdes.jpg";    // o Distintos tonos de verdes.jpg
+import imgHablar from "../assets/vinetas/Hablar-desde-un-lugar.jpg";
+import imgBrisa from "../assets/vinetas/Cuando-la-brisa-llega-y-el-sol-se-queda.jpg"; 
 import imgpaije from "../assets/vinetas/paisaje2.jpg"; 
-import imgcmezcla from "../assets/vinetas/la cínica de la mezcla.jpg"; 
+import imgcmezcla from "../assets/vinetas/la-cinica-de-la-mezcla.jpg"; 
 
 const vinetas = [
   {

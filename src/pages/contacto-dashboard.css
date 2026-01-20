@@ -1,0 +1,382 @@
+/* src/pages/contacto-dashboard.css
+   Estética editorial + verdes claros suaves, coherente con el sitio
+*/
+
+.contacto-page {
+  min-height: 100vh;
+  padding: 5.5rem 3rem 4.2rem 3rem;
+  background: #f2f2f2;
+  color: #0d0d0d;
+  font-family: "DM Sans", "Space Grotesk", system-ui, -apple-system, sans-serif;
+}
+
+/* HERO */
+.contacto-hero {
+  width: min(1100px, 100%);
+  margin: 0 auto 1.6rem auto;
+}
+
+.contacto-overline {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  color: #8fbf9b;
+}
+
+.contacto-title {
+  margin: 0 0 12px;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 2.45rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(13, 13, 13, 0.92);
+}
+
+.contacto-intro {
+  margin: 0;
+  max-width: 72ch;
+  line-height: 1.7;
+  color: rgba(13, 13, 13, 0.78);
+  font-family: "Space Grotesk", system-ui, sans-serif;
+}
+
+/* GRID */
+.contacto-grid {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  grid-auto-rows: minmax(0, auto);
+  gap: 16px;
+}
+
+/* CARD BASE */
+.contacto-card {
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+
+  background: rgba(242, 242, 242, 0.78);
+  border: 1px solid rgba(217, 197, 180, 0.70);
+  box-shadow: 0 16px 30px rgba(13, 13, 13, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.contacto-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background:
+    radial-gradient(620px 260px at 12% 22%, rgba(215, 239, 221, 0.65), transparent 62%),
+    radial-gradient(520px 280px at 88% 18%, rgba(168, 220, 190, 0.32), transparent 62%),
+    radial-gradient(420px 260px at 86% 100%, rgba(164, 166, 114, 0.10), transparent 62%);
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.contacto-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    inset 0 -1px 0 rgba(13, 13, 13, 0.06);
+  pointer-events: none;
+}
+
+/* MAIN CARD */
+.contacto-card-main {
+  grid-column: 1 / 2;
+  padding: 18px 18px 16px;
+}
+
+.contacto-card-head {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.contacto-card-title {
+  margin: 0;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 1.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(13, 13, 13, 0.9);
+}
+
+.contacto-chip {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 12px;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(215, 239, 221, 0.78),
+    rgba(191, 226, 209, 0.35)
+  );
+  border: 1px solid rgba(143, 191, 155, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+
+  font-size: 0.9rem;
+  color: rgba(13, 13, 13, 0.78);
+  font-family: "Space Grotesk", system-ui, sans-serif;
+}
+
+.contacto-card-text {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 14px 0;
+  line-height: 1.65;
+  color: rgba(13, 13, 13, 0.76);
+  font-family: "Space Grotesk", system-ui, sans-serif;
+}
+
+/* FIELDS */
+.contacto-fields {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.contacto-field {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 12px;
+
+  padding: 12px 12px;
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(242, 242, 242, 0.70),
+    rgba(207, 230, 201, 0.32)
+  );
+  border: 1px solid rgba(217, 197, 180, 0.60);
+}
+
+.contacto-label {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  color: rgba(13, 13, 13, 0.62);
+  margin-top: 2px;
+}
+
+.contacto-value {
+  color: rgba(13, 13, 13, 0.86);
+  font-weight: 700;
+  font-family: "DM Sans", system-ui, sans-serif;
+  word-break: break-word;
+}
+
+.contacto-link {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(143, 191, 155, 0.55);
+  padding-bottom: 2px;
+  transition: border-color 180ms ease, color 180ms ease;
+}
+
+.contacto-link:hover {
+  color: rgba(13, 13, 13, 0.95);
+  border-bottom-color: rgba(13, 13, 13, 0.35);
+}
+
+/* ACTIONS */
+.contacto-actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.contacto-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 12px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(143, 191, 155, 0.40);
+
+  background: rgba(242, 242, 242, 0.72);
+  color: rgba(13, 13, 13, 0.84);
+
+  font-family: "Special Gothic Expanded One", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+
+  text-decoration: none;
+  box-shadow: 0 16px 30px rgba(13, 13, 13, 0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.contacto-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 22px 40px rgba(13, 13, 13, 0.10);
+}
+
+.contacto-btn-primary {
+  background: linear-gradient(
+    135deg,
+    rgba(215, 239, 221, 0.92),
+    rgba(143, 191, 155, 0.24)
+  );
+}
+
+/* FOOT */
+.contacto-foot {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.contacto-foot-chip {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  padding: 7px 10px;
+  border-radius: 999px;
+
+  background: rgba(217, 197, 180, 0.18);
+  border: 1px solid rgba(217, 197, 180, 0.55);
+  color: rgba(13, 13, 13, 0.72);
+}
+
+.contacto-foot-hint {
+  font-size: 0.92rem;
+  color: rgba(13, 13, 13, 0.62);
+  font-family: "Space Grotesk", system-ui, sans-serif;
+}
+
+/* SIDE CARDS */
+.contacto-card-note,
+.contacto-card-mini {
+  padding: 18px;
+}
+
+.contacto-card-note {
+  grid-column: 2 / 3;
+}
+
+.contacto-card-mini {
+  grid-column: 2 / 3;
+}
+
+.contacto-note-overline {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: #8fbf9b;
+}
+
+.contacto-note-title {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 10px 0;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(13, 13, 13, 0.88);
+}
+
+.contacto-note-text {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 14px 0;
+  line-height: 1.7;
+  color: rgba(13, 13, 13, 0.76);
+  font-family: "Space Grotesk", system-ui, sans-serif;
+}
+
+.contacto-note-chips {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.contacto-mini-chip {
+  padding: 8px 10px;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(215, 239, 221, 0.78),
+    rgba(191, 226, 209, 0.32)
+  );
+  border: 1px solid rgba(143, 191, 155, 0.32);
+  color: rgba(13, 13, 13, 0.74);
+
+  font-size: 0.82rem;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+}
+
+.contacto-list {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.75;
+  color: rgba(13, 13, 13, 0.78);
+  font-family: "Space Grotesk", system-ui, sans-serif;
+}
+
+/* RESPONSIVE */
+@media (max-width: 980px) {
+  .contacto-grid {
+    grid-template-columns: 1fr;
+  }
+  .contacto-card-main,
+  .contacto-card-note,
+  .contacto-card-mini {
+    grid-column: 1 / 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .contacto-page {
+    padding: 4.6rem 1.4rem 3.2rem 1.4rem;
+  }
+  .contacto-title {
+    font-size: 1.95rem;
+  }
+  .contacto-card-title {
+    font-size: 1.35rem;
+  }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .contacto-btn,
+  .contacto-link {
+    transition: none;
+  }
+}

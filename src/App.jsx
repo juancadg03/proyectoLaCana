@@ -11,6 +11,7 @@ import Archivos from "./pages/archivos.jsx";
 import "./App.css";
 import ArchivosDashboard from "./components/archivos-dashboard.jsx";
 import EtnografiaDashboard from "./components/etnografia-dashboard.jsx";
+import ContactoDashboard from "./pages/contacto-dashboard.jsx";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/archivos" element={<Archivos />} />
         <Route path="/archivos/archivos-dashboard" element={<ArchivosDashboard />} />
         <Route path="/archivos/etnografia-dashboard" element={<EtnografiaDashboard />} />
+        <Route path="/contacto" element={<ContactoDashboard />} /> 
       </Routes>
     </div>
   );

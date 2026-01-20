@@ -62,7 +62,7 @@ export default function ContraImagen() {
   var [activeAlt, setActiveAlt] = useState("");
 
   var trabajadores = useMemo(function () {
-    return buildImages("Foto ensayo", "fotoTrabajadores", 1, 14, ".jpg");
+    return buildImages("Fotoensayo", "fotoTrabajadores", 1, 14, ".jpg");
   }, []);
 
   var serigrafia = useMemo(function () {

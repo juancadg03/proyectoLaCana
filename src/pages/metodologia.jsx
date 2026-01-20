@@ -368,296 +368,296 @@ const timelineItems = [
 const figureMeta = {
 
   // 1 (Transformación - general)
-  "Figura 1-1.png": {
+  "Figura1-1.png": {
     figLabel: "Figura 1. Incauca",
     note:
       "Nota. Imagen publicada por Incauca [@incauca.co] en Instagram, el 18 de agosto de 2025. https://www.instagram.com/p/DNgJnNqtvI8/",
   },
 
   // 1.1 Cuidado
-  "Figura 2-1.1 Cuidado_1.png": {
+  "Figura2-1.1-Cuidado_1.png": {
     figLabel: "Figura 2. Portada sitio web de Manuelita",
     note:
       "Nota. Imagen publicada en el sitio web de Manuelita. s. f. https://www.manuelita.com/",
   },
-  "Figura 3-1.1 Cuidado_2.png": {
+  "Figura3-1.1-Cuidado_2.png": {
     figLabel: "Figura 3. Storie destacada “Somos azúcar…”",
     note:
       "Nota. Imagen publicada por Asocaña [@asocanaoficial] en Instagram, el 12 de noviembre de 2021. https://www.instagram.com/stories/highlights/18129181459117559/",
   },
-  "Figura 4-1.1 Cuidado_3.png": {
+  "Figura4-1.1-Cuidado_3.png": {
     figLabel: "Figura 4. Video “En estos campos crece más que caña “",
     note:
       "Nota. Video publicado por Asocaña [@asocanaoficial] en Instagram, el 4 de noviembre de 2024. https://www.instagram.com/reel/DB9tGwGyLYB/",
   },
 
   // 1.2 Economía circular
-  "Figura 5-1.2 Economía circular_1.jpeg": {
+  "Figura5-1.2-Economia-circular_1.jpeg": {
     figLabel: "Figura 5. Presentación de Asocaña en la Semana de la Biodiversidad",
     note: "Nota. Fotografía de Gabriela Cobo, Cali, octubre de 2025.",
   },
-  "Figura 6-1.2 Economia circular_2.png": {
+  "Figura6-1.2-Economia-circular_2.png": {
     figLabel: "Figura 6. Uso del bagazo en Manuelita",
     note:
       "Nota. Imagen publicada por Manuelita [@manuelitaagroindustria] en Instagram, el 24 de mayo de 2025. https://www.instagram.com/p/DKC_KPMuS4C/",
   },
 
   // 1.3 Responsabilidad social
-  "Figura 7-1.3 Responsabilidad social_1.png": {
+  "Figura7-1.3-Responsabilidad-social_1.png": {
     figLabel: "Figura 7. Convenio Asocaña–MinAgricultura",
     note:
       "Nota. Imagen publicada por Asocaña [@asocanaoficial] en Instagram, el 29 de septiembre de 2025.  https://www.instagram.com/p/DPM1fnXkh5b/",
   },
-  "Figura 8-1.3 Responsabilidad social_2.png": {
+  "Figura8-1.3-Responsabilidad-social_2.png": {
     figLabel: "Figura 8. Programas comunitarios de Manuelita",
     note:
       "Nota. Imagen publicada por Manuelita [@manuelitaagroindustria] en Instagram, el 29 de agosto de 2025. https://www.instagram.com/p/DN9EFUKEeQ5/",
   },
-  "Figura 9-1.3 Responsabilidad social_3.png": {
+  "Figura9-1.3-Responsabilidad-social_3.png": {
     figLabel: "Figura 9. Portada sitio web Fundación Caicedo González Riopaila Castilla",
     note:
       "Nota. Imagen publicada en el sitio web de la FCGRC. s. f. https://fcgriopailacastilla.org/site/",
   },
 
   // 1.4 Cercanía
-  "Figura 10-1.4 Cercania_1.png": {
+  "Figura10-1.4-Cercania_1.png": {
     figLabel: "Figura 10. Petronio Álvarez – Asocaña",
     note:
       "Nota. Imagen publicada por Asocaña [@asocanaoficial] en Instagram, el 8 de agosto de 2025. https://www.instagram.com/p/DNGSugcp6EP/",
   },
-  "Figura 11-1.4 Cercania_2.png": {
+  "Figura11-1.4-Cercania_2.png": {
     figLabel: "Figura 11. Stand de Asocaña en el Petronio",
     note:
       "Nota. Imagen publicada por Asocaña [@asocanaoficial] en Instagram, el 13 de agosto de 2025. https://www.instagram.com/p/DNTKjfaPez1/",
   },
-  "Figura 12-1.4 Cercania_3.png": {
+  "Figura12-1.4-Cercania_3.png": {
     figLabel: "Figura 12. Fotografía en Petronio publicada por Alejandro Eder",
     note:
       "Nota. Imagen publicada por Alejandro Eder [@alejoeder] en Instagram, el 18 de agosto de 2025. https://www.instagram.com/p/DNggAt-p09b/",
   },
 
   // 2 (Identitario - general)
-  "Figura 13-2.jpeg": {
+  "Figura13-2.jpeg": {
     figLabel: "Figura 13. Valla en Cali",
     note: "Nota. Fotografía de Joshua Ruiz, Cali, diciembre de 2025.",
   },
 
   // 2.1 Caña-Azúcar
-  "Figura 14-2.1Caña Azúcar_ 1.jpeg": {
+  "Figura14-2.1Cana-Azucar_1.jpeg": {
     figLabel: "Figura 14. Letrero en el Festival Petronio",
     note: "Nota. Fotografía de Gabriela Cobo, Cali, octubre de 2025.",
   },
-  "Figura 15-2.1_Caña-Azucar_2.webp": {
+  "Figura15-2.1_Cana-Azucar_2.webp": {
     figLabel: "Figura 15. Museo de la Caña de Azúcar",
     note:
       "Nota. Fotografía de M. Ríos, publicada el 22 de mayo de 2019 en OurGuía. https://www.ourguia.com/blog/museo-de-la-cana-de-azucar",
   },
-  "Figura 16-2.1_Caña-Azucar_3.png": {
+  "Figura16-2.1_Cana-Azucar_3.png": {
     figLabel: "Figura 16. “No mires los comentarios”",
     note:
       "Nota. Imagen publicada por Providencia [@providencia.col] en Instagram, el 26 de noviembre de 2025. https://www.instagram.com/p/DRh_xUFjWrb/",
   },
 
   // 2.2 Historia del desarrollo de la región
-  "Figura 17-2.2 Historia de desarrollo de la región_1.png": {
+  "Figura17-2.2-Historia-de-desarrollo-de-la-region_1.png": {
     figLabel: "Figura 17. Mujeres en la agroindustria Manuelita",
     note:
       "Nota. Imagen publicada por Manuelita [@manuelitaagroindustria] en Instagram, el 13 de marzo de 2025. https://www.instagram.com/p/DHKC6IXuCyw/",
   },
-  "Figura 18-2.2_ Historia de desarrollo de la región_2.png": {
+  "Figura18-2.2_Historiadedesarrollodelaregion_2.png": {
     figLabel: "Figura 18. 84 años del Ingenio Pichichí",
     note:
       "Nota. Imagen publicada por Ingenio Pichichí [@ingenio_pichichi] en Instagram, el 1 de abril de 2025. https://www.instagram.com/p/DH54bZYxvxm/",
   },
 
   // 2.3 Fiesta
-  "Figura 19-2.3 Fiesta_1.png": {
+  "Figura19-2.3-Fiesta_1.png": {
     figLabel: "Figura 19. Fiesta del Pacífico – Asocaña",
     note:
       "Nota. Imagen publicada por Asocaña [@asocanaoficial] en Instagram, el 17 de agosto de 2025. https://www.instagram.com/p/DNeoy1uuIOs/",
   },
-  "Figura 20-2.3 Fiesta_2.png": {
+  "Figura20-2.3-Fiesta_2.png": {
     figLabel: "Figura 20. Ingenios Mayagüez y San Carlos en el Petronio",
     note:
       "Nota. Imagen publicada por Ingenio Mayagüez [@ingeniomayaguez] e Ingenio San Carlos [@ingeniosancarlos] en Instagram, el 12 de agosto de 2025. https://www.instagram.com/p/DNRtGcOpE63/",
   },
-  "Figura 21-2.3 Fiesta_3.png": {
+  "Figura21-2.3Fiesta_3.png": {
     figLabel: "Figura 21. Padrinos y ahijados Manuelita",
     note:
       "Nota. Imagen publicada por Manuelita [@manuelitaagroindustria] en Instagram, el 29 de junio de 2024. https://www.instagram.com/p/C8zXe8AMGLJ/",
   },
 
   // 3 (Progreso - general)
-  "Figura 22-3.png": {
+  "Figura22-3.png": {
     figLabel: "Figura 22. “Donde hay caña hay progreso”",
     note:
       "Nota. Imagen publicada por Asocaña [@asocanaoficial] en Instagram, el 20 de agosto de 2025. https://www.instagram.com/p/DNlTK9qT0lQ/",
   },
 
   // 3.1 Gran apoyo económico
-  "Figura 23-3.1 Gran apoyo económico_1.png": {
+  "Figura23-3.1Granapoyoeconomico_1.png": {
     figLabel: "Figura 23. Desarrollo del Suroccidente – Manuelita",
     note:
       "Nota. Imagen publicada por Manuelita [@manuelitaagroindustria] en Instagram, el 8 de noviembre de 2025. https://www.instagram.com/p/DP9rRJ_EWVk/",
   },
-  "Figura 24-3.1 Gran apoyo económico_2.png": {
+  "Figura24-3.1Granapoyoeconomico_2.png": {
     figLabel: "Figura 24. “Somos Corazón de Caña”",
     note:
       "Nota. Imagen publicada por Manuelita [@manuelitaagroindustria] en Instagram, el 8 de noviembre de 2025. https://www.instagram.com/p/DQzzjH1kTbU/",
   },
 
   // 3.2 Empleo
-  "Figura 25-3.2 Empleo_1.png": {
+  "Figura25-3.2Empleo_1.png": {
     figLabel: "Figura 25. Empresa destacada – Manuelita",
     note:
       "Nota. Imagen publicada por Manuelita [@manuelitaagroindustria] en Instagram, el 8 de octubre de 2025. https://www.instagram.com/p/DPj-g3pkXpn/",
   },
-  "Figura 26-3.2 Empleo_2.png": {
+  "Figura26-3.2Empleo_2.png": {
     figLabel: "Figura 26. Trabajo y futuro en la agroindustria",
     note:
       "Nota. Imagen publicada por Asocaña [@asocanaoficial] en Instagram, el 8 de septiembre de 2025. https://www.instagram.com/p/DOWEH43E2UG/",
   },
-  "Figura 27-3.2 Empleo_3.png": {
+  "Figura27-3.2Empleo_3.png": {
     figLabel: "Figura 27. “Aquí crecemos todos” – Ingenio Mayagüez",
     note:
       "Nota. Imagen publicada por Ingenio Mayagüez [@ingeniomayaguez] en Instagram, el 29 de mayo de 2025. https://www.instagram.com/p/DKQHwKXpars/",
   },
 
   // 3.3 Tecnología y avance
-  "Figura 28-3.3 Tecnología y avance_1.png": {
+  "Figura28-3.3Tecnologiayavance_1.png": {
     figLabel: "Figura 28. Conexiones económicas en municipios cañeros",
     note:
       "Nota. Imagen publicada por Asocaña [@asocanaoficial] en Instagram, el 10 de septiembre de 2025. https://www.instagram.com/p/DOb7ELrE727/",
   },
-  "Figura 29-3.3 Tecnología y avance _2.png": {
+  "Figura29-3.3Tecnologiayavance_2.png": {
     figLabel: "Figura 29. Montaje de planta de cogeneración – Pichichí",
     note:
       "Nota. Video publicado por Ingenio Pichichí [@ingenio_pichichi] en Instagram, el 25 de septiembre de 2025. https://www.instagram.com/reel/DPCgVs5EgVU/",
   },
 
   // 3.4 Paisaje
-  "Figura 30-3.4 Paisaje_1.png": {
+  "Figura30-3.4Paisaje_1.png": {
     figLabel: "Figura 30. Paisaje cañero al atardecer",
     note:
       "Nota. Imagen publicada por Asocaña [@asocanaoficial] en Instagram, el 5 de agosto de 2025. https://www.instagram.com/p/DM-gtTivrVd/",
   },
-  "Figura 31-3.4 Paisaje_2.png": {
+  "Figura31-3.4Paisaje_2.png": {
     figLabel: "Figura 31. Inspiración Ghibli – Mayagüez",
     note:
       "Nota. Imagen publicada por Ingenio Mayagüez [@ingeniomayaguez] en Instagram, el 30 de marzo de 2025. https://www.instagram.com/p/DH1TBqhJw3D/",
   },
 
   // 4 (Socioambiental - general)
-  "Figura 32-4.avif": {
+  "Figura32-4.avif": {
     figLabel: "Figura 32. Atmósferas – William Narváez Cedeño",
     note:
       "Nota. Obra publicada por W. Narváez Cedeño, 2014–2016. https://williamnarvaezc.wixsite.com/william-narvaez/atmosferas",
   },
 
   // 4.1 Tierra
-  "Figura 33-4.1 Tierra_1.jpg": {
+  "Figura33-4.1Tierra_1.jpg": {
     figLabel: "Figura 33. Grafiti en Avenida de las Américas, Cali",
     note: "Nota. Fotografía de Gabriela Cobo, septiembre de 2025.",
   },
-  "Figura 34-4.1 Tierra_2.png": {
+  "Figura34-4.1Tierra_2.png": {
     figLabel: "Figura 34. Video “El monocultivo de caña en el Valle”",
     note:
       "Nota. Video publicado por J. Acosta en Facebook, el 28 de octubre de 2024. https://www.facebook.com/watch/?v=583164404145383",
   },
-  "Figura 35-4.1 Tierra_3.png": {
+  "Figura35-4.1Tierra_3.png": {
     figLabel: "Figura 35. Mural “¡Caña no más!”",
     note:
       "Nota. Fotografía publicada por E. Possú en CESYCMÉ, el 12 de noviembre de 2019. http://cesycme.org/index.php/2019/11/12/caravana-artivista-por-el-cauca-encuentros-interculturales-por-la-defensa-de-la-vida-y-el-territorio/",
   },
 
   // 4.2 Agua
-  "Figura 36-4.2 Agua_1.jpeg": {
+  "Figura36-4.2Agua_1.jpeg": {
     figLabel: "Figura 36. Afiche por el cuidado del agua",
     note:
       "Nota. Fotografía de Gabriela Cobo, Universidad del Valle, octubre de 2025.",
   },
-  "Figura 37-4.2 Agua_2.png": {
+  "Figura37-4.2Agua_2.png": {
     figLabel: "Figura 37. Enramada — Despojo de tierras y aguas",
     note:
       "Nota. Imagen publicada por Enramada [@en_ramada] en Instagram, el 21 de octubre de 2024. https://www.instagram.com/p/DBZw3v4St5r/",
   },
 
   // 4.3 Quemas
-  "Figura 38-4.3 Quemas_1.jpg": {
+  "Figura38-4.3Quemas_1.jpg": {
     figLabel: "Figura 38. Mural calle de la Escopeta",
     note: "Nota. Fotografía de Gabriela Cobo, Cali, septiembre de 2025.",
   },
-  "Figura 39-4.3 Quemas_2.jpg": {
+  "Figura39-4.3Quemas_2.jpg": {
     figLabel: "Figura 39. Fotograma “La tierra y la sombra”",
     note:
       "Nota. Fotograma publicado por Proimágenes Colombia, 2015. https://www.proimagenescolombia.com/.../pelicula_plantilla.php?id_pelicula=2116",
   },
 
   // 4.4 Laboral
-  "Figura 40-4.4 Laboral_1.png": {
+  "Figura40-4.4Laboral_1.png": {
     figLabel: "Figura 40. Video “Corteros de caña (22.000 machetazos)”",
     note:
       "Nota. Video publicado por Producción Agrícola Vallecaucana en YouTube, el 4 de enero de 2020. https://www.youtube.com/watch?v=K_ea7ntPh3Q",
   },
-  "Figura 41-4.4 Laboral_2.jpg": {
+  "Figura41-4.4Laboral_2.jpg": {
     figLabel: "Figura 41. Fotograma del documental “Corta”",
     note:
       "Nota. Fotograma publicado por Proimágenes Colombia, dirigido por F. Guerrero, 2014. https://www.proimagenescolombia.com/.../pelicula_plantilla.php?id_pelicula=2012",
   },
-  "Figura 42-4.4 Laboral_3.jpg": {
+  "Figura42-4.4Laboral_3.jpg": {
     figLabel: "Figura 42. Mural en Guacarí",
     note: "Nota. Fotografía de Gabriela Cobo, agosto de 2025.",
   },
 
   // 5 (Disputa - general)
-  "Figura 43-5.png": {
+  "Figura43-5.png": {
     figLabel: "Figura 43. Portada del informe “No todo lo verde es biodiverso”",
     note:
       "Nota. Imagen publicada por Forest Peoples Programme, Palenke Alto Cauca y Enramada, en 2024. https://www.forestpeoples.org/.../no-todo-lo-verde-es-biodiverso…",
   },
 
   // 5.1
-  "Figura 44-5.1 El amargo saber del azúcar_1.jpg": {
+  "Figura44-5.1Elamargosaberdelazucar_1.jpg": {
     figLabel: "Figura 44. Afiche callejero en Cali",
     note: "Nota. Fotografía de Gabriela Cobo, septiembre de 2025.",
   },
-  "Figura 45-5.1 El amargo saber del azúcar_2.gif": {
+  "Figura45-5.1Elamargosaberdelazucar_2.gif": {
     figLabel: "Figura 45. “Amargo sabor a caña: masacre de Llano Verde”",
     note:
       "Nota. Imagen principal del artículo publicada por D. Rey en Infobae, el 28 de agosto de 2022. https://www.infobae.com/.../amargo-sabor-a-cana…",
   },
 
   // 5.2
-  "Figura 46-5.2 Mas allá de la caña, otros paisajes_1.webp": {
+  "Figura46-5.2Masalladelacana,otrospaisajes_1.webp": {
     figLabel: "Figura 46. Infografía “Impactos negativos de la industria cañera”",
     note: "Nota. Imagen publicada por MUTANTE, 2024. https://mutante.org/.../impactos-negativos-de-la-industria…",
   },
-  "Figura 47-5.2 Mas allá de la caña, otros paisajes_2.webp": {
+  "Figura47-5.2Masalladelacana,otrospaisajes_2.webp": {
     figLabel: "Figura 47. Póster “Cali es Cali y también es Loma”",
     note:
       "Nota. Imagen publicada por La Linterna Cali. s. f. https://lalinternacali.com/producto/cali-es-cali-y-tambien-es-loma-1-2/",
   },
-  "Figura 48-5.2 Mas allá de la caña, otros paisajes_4.jpg": {
+  "Figura48-5.2Masalladelacana,otrospaisajes_4.jpg": {
     figLabel: "Figura 48. Grafiti en Universidad del Valle",
     note: "Nota. Fotografía de Gabriela Cobo, septiembre de 2025.",
   },
-  "Figura 49-5.2 Mas allá de la caña, otros paisajes_4.png": {
+  "Figura49-5.2Masalladelacana,otrospaisajes_4.png": {
     figLabel: "Figura 49. “Desiertos verdes” – India Taller",
     note:
       "Nota. Imagen publicada por India Taller [@india.taller] en Instagram, el 18 de noviembre de 2024. https://www.instagram.com/p/DChUpDkRmAw/",
   },
 
   // 5.3
-  "Figura 50-5.3.Desenmascarar el poder_1.webp": {
+  "Figura50-5.3.Desenmascararelpoder_1.webp": {
     figLabel: "Figura 50. Infografía “Azúcar: los números de una industria…”",
     note:
       "Nota. Imagen publicada por A. Pik en Vorágine, el 13 de enero de 2022. https://voragine.co/historias/infografia/azucar-los-numeros…",
   },
-  "Figura 51-5.3Desenmascarar el poder_2.jpg": {
+  "Figura51-5.3Desenmascararelpoder_2.jpg": {
     figLabel: "Figura 51. Grafiti en Universidad del Valle",
     note: "Nota. Fotografía de Gabriela Cobo, septiembre de 2025.",
   },
-  "Figura 52-5.3Desenmascarar el poder_3.jpg": {
+  "Figura52-5.3Desenmascararelpoder_3.jpg": {
     figLabel: "Figura 52. Afiche en Cali",
     note: "Nota. Fotografía de Gabriela Cobo, agosto de 2025.",
   },
@@ -713,7 +713,7 @@ function Metodologia() {
         content: (
           <AxisArticle>
             <h3 className="axis-title">1. Transformación</h3>
-            <FigureBlock files={["Figura 1-1.png"]} />
+            <FigureBlock files={["Figura1-1.png"]} />
 
             <p className="axis-text">
               En este eje aparece una narrativa que presenta a la industria cañera como un sector transformado, distinto de su pasado y de otras actividades extractivas. Se muestra como una agroindustria con conciencia ambiental y social, proyectada como moderna, responsable y alineada con los valores contemporáneos de sostenibilidad. Este discurso, marcado por tonos verdes y azules, cifras y expresiones de compromiso, puede leerse como un ejercicio de <em>greenwashing</em> hasta <em>social washing</em> <sup><a href="#fn4" id="ref-4" className="footnote-ref">4</a></sup>, donde la sostenibilidad se narra y se escenifica.
@@ -726,9 +726,9 @@ function Metodologia() {
             <h4 className="axis-subtitle">1.1 Cuidado</h4>
             <FigureBlock
               files={[
-                "Figura 2-1.1 Cuidado_1.png",
-                "Figura 3-1.1 Cuidado_2.png",
-                "Figura 4-1.1 Cuidado_3.png",
+                "Figura2-1.1-Cuidado_1.png",
+                "Figura3-1.1-Cuidado_2.png",
+                "Figura4-1.1-Cuidado_3.png",
               ]}
             />
 
@@ -751,8 +751,8 @@ function Metodologia() {
             <h4 className="axis-subtitle">1.2. Industria circular</h4>
             <FigureBlock
               files={[
-                "Figura 5-1.2 Economía circular_1.jpeg",
-                "Figura 6-1.2 Economia circular_2.png",
+                "Figura5-1.2-Economia-circular_1.jpeg",
+                "Figura6-1.2-Economia-circular_2.png",
               ]}
             />
 
@@ -771,9 +771,9 @@ function Metodologia() {
             <h4 className="axis-subtitle">1.3. Responsabilidad social</h4>
             <FigureBlock
               files={[
-                "Figura 7-1.3 Responsabilidad social_1.png",
-                "Figura 8-1.3 Responsabilidad social_2.png",
-                "Figura 9-1.3 Responsabilidad social_3.png",
+                "Figura7-1.3-Responsabilidad-social_1.png",
+                "Figura8-1.3-Responsabilidad-social_2.png",
+                "Figura9-1.3-Responsabilidad-social_3.png",
               ]}
             />
 
@@ -790,15 +790,15 @@ function Metodologia() {
             </p>
 
             <p className="axis-text">
-              No se trata de negar la existencia ni los efectos concretos de estos apoyos, sino de observar cómo son comunicados y desde qué visión se formulan. En muchos casos, se trata de intervenciones que responden más a una lógica desarrollista y superficial que a las necesidades reales del territorio: por ejemplo, promover emprendimientos cuando existen problemáticas más urgentes, o construir canchas deportivas en veredas con dificultades de movilidad<sup><a href="#fn7" id="ref-7" className="footnote-ref">7</a></sup>. Estas acciones se presentan como pruebas de un compromiso profundo, reforzando la idea de que la industria es un actor social indispensable. Al hacerlo, suaviza la percepción pública sobre su poder económico y territorial.
+              No se trata de negar la existencia ni los efectos concretos de estos apoyos, sino de observar cómo son comunicados y desde qué visión se formulan. En muchos casos, se trata de intervenciones que responden más a una lógica desarrollista y superficial que a las necesidades reales del territorio: por ejemplo, promover emprendimientos cuando existen problemáticas más urgentes, o construir canchas deportivas en veredas con dificultades de movilidad<sup><a href="#fn6" id="ref-6" className="footnote-ref">6</a></sup>. Estas acciones se presentan como pruebas de un compromiso profundo, reforzando la idea de que la industria es un actor social indispensable. Al hacerlo, suaviza la percepción pública sobre su poder económico y territorial.
             </p>
 
             <h4 className="axis-subtitle">1.4 Cercanía</h4>
             <FigureBlock
               files={[
-                "Figura 10-1.4 Cercania_1.png",
-                "Figura 11-1.4 Cercania_2.png",
-                "Figura 12-1.4 Cercania_3.png",
+                "Figura10-1.4-Cercania_1.png",
+                "Figura11-1.4-Cercania_2.png",
+                "Figura12-1.4-Cercania_3.png",
               ]}
             />
 
@@ -815,7 +815,7 @@ function Metodologia() {
             </p>
 
             <p className="axis-text axis-close">
-             Las narrativas de transformación de la industria cañera construyen una imagen de sostenibilidad que, aunque se apoya en ciertos avances reales, también magnífica estos logros y atenúa los impactos estructurales del monocultivo. El uso de lenguajes verdes, cifras y estéticas ambientalizadas produce la sensación de una industria “ya cambiada”, a pesar de las tensiones socio ecológicas señaladas por comunidades del Valle y Cauca. En este marco, estas narrativas operan como formas de greenwashing (y en algunos casos social washing<sup><a href="#fn8" id="ref-8" className="footnote-ref">8</a></sup>) al convertir acciones puntuales de cuidado ambiental o apoyo comunitario en pruebas de responsabilidad ampliada. Iniciativas sociales y culturales se integran en un relato donde los ingenios aparecen como aliados del territorio, aun cuando persisten críticas sobre el uso de la tierra, el agua y los efectos socioambientales del monocultivo.
+             Las narrativas de transformación de la industria cañera construyen una imagen de sostenibilidad que, aunque se apoya en ciertos avances reales, también magnífica estos logros y atenúa los impactos estructurales del monocultivo. El uso de lenguajes verdes, cifras y estéticas ambientalizadas produce la sensación de una industria “ya cambiada”, a pesar de las tensiones socio ecológicas señaladas por comunidades del Valle y Cauca. En este marco, estas narrativas operan como formas de greenwashing (y en algunos casos social washing<sup><a href="#fn7" id="ref-7" className="footnote-ref">7</a></sup>) al convertir acciones puntuales de cuidado ambiental o apoyo comunitario en pruebas de responsabilidad ampliada. Iniciativas sociales y culturales se integran en un relato donde los ingenios aparecen como aliados del territorio, aun cuando persisten críticas sobre el uso de la tierra, el agua y los efectos socioambientales del monocultivo.
             </p>
 
             <div className="metodologia-footnotes" aria-label="Notas al pie">
@@ -828,23 +828,14 @@ function Metodologia() {
                    Social washing, “cómo algunas organizaciones pretenden ser más sociales de lo que realmente son, con el único fin de proyectar una imagen positiva sin respaldarla con acciones genuinas”. Cita de Funiber. <a href="#ref-4" className="footnote-back">↩</a>
                 </li>
                 <li id="fn5">
-                   Citar a Arturo Escobar. <a href="#ref-5" className="footnote-back">↩</a>
+                   Según Arturo Escobar se entiende los  regímenes de verdad del desarrollo como los discursos del desarrollo que generan una comprensión e imaginarios de la naturaleza y especialmente en los paisajes considerados tercer mundo.  <a href="#ref-5" className="footnote-back">↩</a>
                 </li>
                 <li id="fn6">
-                    Citar donde explica esto Arturo Escobar. <a href="#ref-6" className="footnote-back">↩</a>
+                    En una salida de campo a la zona rural de Guacarí, la profesora del colegio de este corregimiento nos comentaba como construyeron el ingenio Pichichi una cancha de fútbol sobre un terreno que no se podía ingresar por problemas jurídicos y por riesgo ambiental. <a href="#ref-6" className="footnote-back">↩</a>
                 </li>
                 <li id="fn7">
-                    En una salida de campo a la zona rural de Guacarí, la profesora del colegio de este corregimiento nos comentaba como construyeron el ingenio Pichichi una cancha de fútbol sobre un terreno que no se podía ingresar por problemas jurídicos y por riesgo ambiental. <a href="#ref-7" className="footnote-back">↩</a>
+                    Social washing, “cómo algunas organizaciones pretenden ser más sociales de lo que realmente son, con el único fin de proyectar una imagen positiva sin respaldarla con acciones genuinas”. Cita de Funiber. <a href="#ref-7" className="footnote-back">↩</a>
                 </li>
-                <li id="fn8">
-                    Social washing, “cómo algunas organizaciones pretenden ser más sociales de lo que realmente son, con el único fin de proyectar una imagen positiva sin respaldarla con acciones genuinas”. Cita de Funiber. <a href="#ref-8" className="footnote-back">↩</a>
-                </li>
-                 <li id="fn9">
-                    T. Lorek, propone en sus estudios de “Making the green revolution” cómo la Revolución Verde no quedó solo en el contexto histórico de los años 60, sino que su influencia persiste y adapta narrativas a necesidades actuales; es necesario revisar esa historia con lentes contemporáneos para estudiar narrativas como la seguridad y soberanía alimentaria. <a href="#ref-9" className="footnote-back">↩</a>
-                 </li>
-                 <li id="fn10">
-                    Concepto propuesto por Lorena Almario en entrevista y en la conversación con Aceneth Perafán en Casa Cultural Fronteriza —discutido por múltiples actores y memorias territoriales— que evidencia cómo se prioriza una visión económica por encima de dimensiones sociales, culturales y ecológicas, prolongando la lógica de la Revolución Verde. <a href="#ref-10" className="footnote-back">↩</a>
-                 </li>
               </ol>
             </div>
           </AxisArticle>
@@ -858,7 +849,7 @@ function Metodologia() {
         content: (
           <AxisArticle>
             <h3 className="axis-title">2. Identitario</h3>
-            <FigureBlock files={["Figura 13-2.jpeg"]} />
+            <FigureBlock files={["Figura13-2.jpeg"]} />
 
             <p className="axis-text">
               La narrativa identitaria impulsada por la agroindustria y diversos actores (políticos, influencies, negocios...) busca posicionar la caña de azúcar como un signo natural de pertenencia regional, casi como si fuera un elemento compartido por toda la población del Valle del Cauca. Aunque las identidades no se construyen sólo desde los discursos institucionales, los ingenios y gremios como Asocaña producen contenidos que inscriben la caña en la vida cotidiana, cultural y simbólica de la región.
@@ -875,9 +866,9 @@ function Metodologia() {
             <h4 className="axis-subtitle">2.1 Trapiche/azúcar</h4>
             <FigureBlock
               files={[
-                "Figura 14-2.1Caña Azúcar_ 1.jpeg",
-                "Figura 15-2.1_Caña-Azucar_2.webp",
-                "Figura 16-2.1_Caña-Azucar_3.png",
+                "Figura14-2.1Cana-Azucar_1.jpeg",
+                "Figura15-2.1_Cana-Azucar_2.webp",
+                "Figura16-2.1_Cana-Azucar_3.png",
               ]}
             />
 
@@ -896,8 +887,8 @@ function Metodologia() {
             <h4 className="axis-subtitle">2.2. Historia del desarrollo</h4>
             <FigureBlock
               files={[
-                "Figura 17-2.2 Historia de desarrollo de la región_1.png",
-                "Figura 18-2.2_ Historia de desarrollo de la región_2.png",
+                "Figura17-2.2-Historia-de-desarrollo-de-la-region_1.png",
+                "Figura18-2.2_Historiadedesarrollodelaregion_2.png",
               ]}
             />
 
@@ -912,9 +903,9 @@ function Metodologia() {
             <h4 className="axis-subtitle">2.3 Fiesta y alegría</h4>
             <FigureBlock
               files={[
-                "Figura 19-2.3 Fiesta_1.png",
-                "Figura 20-2.3 Fiesta_2.png",
-                "Figura 21-2.3 Fiesta_3.png",
+                "Figura19-2.3-Fiesta_1.png",
+                "Figura20-2.3-Fiesta_2.png",
+                "Figura21-2.3Fiesta_3.png",
               ]}
             />
 
@@ -940,10 +931,10 @@ function Metodologia() {
         content: (
           <AxisArticle>
             <h3 className="axis-title">3. Progreso</h3>
-            <FigureBlock files={["Figura 22-3.png"]} />
+            <FigureBlock files={["Figura22-3.png"]} />
 
             <p className="axis-text">
-              Esta narrativa es la más persistente y dominante, heredera directa de la Revolución Verde y se podría decir que sigue de alguna manera vigente<sup><a href="#fn9" id="ref-9" className="footnote-ref">9</a></sup>. En ella, la industria cañera se presenta como sinónimo de avance: la adopción de monocultivos, la mecanización, la tecnificación del campo, la biotecnología y los nuevos productos como el etanol funcionan como pruebas materiales de ese progreso. Retoma lo que Escobar plantea sobre el “discurso del desarrollo” como único horizonte posible: una visión que legitima modelos económicos modernizantes y que opera como guía de futuro social. (<Link to="/archivos#refs-analisis-narrativo" className="ref-inline">Escobar, 2007</Link>).
+              Esta narrativa es la más persistente y dominante, heredera directa de la Revolución Verde y se podría decir que sigue de alguna manera vigente<sup><a href="#fn8" id="ref-8" className="footnote-ref">8</a></sup>. En ella, la industria cañera se presenta como sinónimo de avance: la adopción de monocultivos, la mecanización, la tecnificación del campo, la biotecnología y los nuevos productos como el etanol funcionan como pruebas materiales de ese progreso. Retoma lo que Escobar plantea sobre el “discurso del desarrollo” como único horizonte posible: una visión que legitima modelos económicos modernizantes y que opera como guía de futuro social. (<Link to="/archivos#refs-analisis-narrativo" className="ref-inline">Escobar, 2007</Link>).
             </p>
 
             <p className="axis-text">
@@ -953,8 +944,8 @@ function Metodologia() {
             <h4 className="axis-subtitle">3.1. El gran aporte económico</h4>
             <FigureBlock
               files={[
-                "Figura 23-3.1 Gran apoyo económico_1.png",
-                "Figura 24-3.1 Gran apoyo económico_2.png",
+                "Figura23-3.1Granapoyoeconomico_1.png",
+                "Figura24-3.1Granapoyoeconomico_2.png",
               ]}
             />
 
@@ -977,9 +968,9 @@ function Metodologia() {
             <h4 className="axis-subtitle">3.2. Empleo</h4>
             <FigureBlock
               files={[
-                "Figura 25-3.2 Empleo_1.png",
-                "Figura 26-3.2 Empleo_2.png",
-                "Figura 27-3.2 Empleo_3.png",
+                "Figura25-3.2Empleo_1.png",
+                "Figura26-3.2Empleo_2.png",
+                "Figura27-3.2Empleo_3.png",
               ]}
             />
 
@@ -998,8 +989,8 @@ function Metodologia() {
             <h4 className="axis-subtitle">3.3. Tecnología y avance</h4>
             <FigureBlock
               files={[
-                "Figura 28-3.3 Tecnología y avance_1.png",
-                "Figura 29-3.3 Tecnología y avance _2.png",
+                "Figura28-3.3Tecnologiayavance_1.png",
+                "Figura29-3.3Tecnologiayavance_2.png",
               ]}
             />
 
@@ -1018,8 +1009,8 @@ function Metodologia() {
             <h4 className="axis-subtitle">3.4. Paisaje cañero</h4>
             <FigureBlock
               files={[
-                "Figura 30-3.4 Paisaje_1.png",
-                "Figura 31-3.4 Paisaje_2.png",
+                "Figura30-3.4Paisaje_1.png",
+                "Figura31-3.4Paisaje_2.png",
               ]}
             />
 
@@ -1028,7 +1019,7 @@ function Metodologia() {
             </p>
 
             <p className="axis-text">
-              Aquí se activa con fuerza la idea del blanqueamiento del paisaje<sup><a href="#fn10" id="ref-10" className="footnote-ref">10</a></sup> (<Link to="/archivos#refs-analisis-narrativo" className="ref-inline">Perafán, 2025</Link>). Estas imágenes producen una versión del Valle “limpia” y homogénea. Desde la perspectiva de Ochy Curiel, el blanqueamiento no es solo un proceso racial, sino un proyecto político y estético que busca imponer modelos de modernidad asociados a lo blanco, lo ordenado y lo productivo (<Link to="/archivos#refs-analisis-narrativo" className="ref-inline">Curiel, 2013</Link>). Aplicado al territorio, implica representar como deseable un paisaje alineado con valores hegemónicos, mientras se silencian las presencias, prácticas y estéticas que no encajan en ese ideal.
+              Aquí se activa con fuerza la idea del blanqueamiento del paisaje<sup><a href="#fn9" id="ref-9" className="footnote-ref">9</a></sup> (<Link to="/archivos#refs-analisis-narrativo" className="ref-inline">Perafán, 2025</Link>). Estas imágenes producen una versión del Valle “limpia” y homogénea. Desde la perspectiva de Ochy Curiel, el blanqueamiento no es solo un proceso racial, sino un proyecto político y estético que busca imponer modelos de modernidad asociados a lo blanco, lo ordenado y lo productivo (<Link to="/archivos#refs-analisis-narrativo" className="ref-inline">Curiel, 2013</Link>). Aplicado al territorio, implica representar como deseable un paisaje alineado con valores hegemónicos, mientras se silencian las presencias, prácticas y estéticas que no encajan en ese ideal.
             </p>
 
             <p className="axis-text">
@@ -1044,12 +1035,12 @@ function Metodologia() {
             </p>
           <div className="metodologia-footnotes" aria-label="Notas al pie">
               <hr />
-              <ol start={9}>
-                <li id="fn9">
-                   T. Lorek, propone en sus estudios de “Making the green revolution”  como la revolución verde no quedo solo dentro del contexto histórico de los años 60 si no que se puede ver como actualmente sigue una gran influencia de esta idea y narrativa adaptas dentro de las necesidades actuales y es necesario revisar la historia con lentes actuales para estudiar narrativas como la seguridad alimentaria y soberania alimentaria.<a href="#ref-9" className="footnote-back">↩</a>
+              <ol start={8}>
+                <li id="fn8">
+                   T. Lorek, propone en sus estudios de “Making the green revolution”  como la revolución verde no quedo solo dentro del contexto histórico de los años 60 si no que se puede ver como actualmente sigue una gran influencia de esta idea y narrativa adaptas dentro de las necesidades actuales y es necesario revisar la historia con lentes actuales para estudiar narrativas como la seguridad alimentaria y soberania alimentaria.<a href="#ref-8" className="footnote-back">↩</a>
                 </li>
-                <li id="fn10">
-                   Concepto propuesto de Lorena Almario en una entrevista y dentro de la conversa con  Aceneth Perafán en casa cultural Fronteriza disputado por múltiples actores y memorias territoriales. En su conjunto, prioriza una visión económica por encima de las dimensiones sociales, culturales y ecológicas, y prolonga la lógica de la Revolución Verde: la creencia de que más tecnología, más eficiencia y más productividad son sinónimo de desarrollo, desplazando debates profundos sobre tierra, poder y justicia ambiental. <a href="#ref-10" className="footnote-back">↩</a>
+                <li id="fn9">
+                   Concepto propuesto de Lorena Almario en una entrevista y dentro de la conversa con  Aceneth Perafán en casa cultural Fronteriza disputado por múltiples actores y memorias territoriales. En su conjunto, prioriza una visión económica por encima de las dimensiones sociales, culturales y ecológicas, y prolonga la lógica de la Revolución Verde: la creencia de que más tecnología, más eficiencia y más productividad son sinónimo de desarrollo, desplazando debates profundos sobre tierra, poder y justicia ambiental. <a href="#ref-9" className="footnote-back">↩</a>
                 </li>
               </ol>
             </div>
@@ -1064,10 +1055,10 @@ function Metodologia() {
         content: (
           <AxisArticle>
             <h3 className="axis-title">4. Criticas socio ambientales</h3>
-            <FigureBlock files={["Figura 32-4.avif"]} />
+            <FigureBlock files={["Figura32-4.avif"]} />
 
             <p className="axis-text">
-              La narrativa socioambiental emerge como una contra narrativa <sup><a href="#fn11" id="ref-11" className="footnote-ref">11</a></sup> frente a los discursos de progreso, sostenibilidad e identidad promovidos por los ingenios y sus plataformas de comunicación. Desde la ecología política, esta contra narrativa revela cómo los impactos ambientales del monocultivo no pueden entenderse únicamente como problemas ecológicos, sino como procesos profundamente sociales, donde las transformaciones del agua, la tierra y el aire afectan modos de vida, economías locales, relaciones comunitarias y formas de habitar el territorio.
+              La narrativa socioambiental emerge como una contra narrativa <sup><a href="#fn10" id="ref-10" className="footnote-ref">10</a></sup> frente a los discursos de progreso, sostenibilidad e identidad promovidos por los ingenios y sus plataformas de comunicación. Desde la ecología política, esta contra narrativa revela cómo los impactos ambientales del monocultivo no pueden entenderse únicamente como problemas ecológicos, sino como procesos profundamente sociales, donde las transformaciones del agua, la tierra y el aire afectan modos de vida, economías locales, relaciones comunitarias y formas de habitar el territorio.
             </p>
 
             <p className="axis-text">
@@ -1077,9 +1068,9 @@ function Metodologia() {
             <h4 className="axis-subtitle">4.1. Tierra</h4>
             <FigureBlock
               files={[
-                "Figura 33-4.1 Tierra_1.jpg",
-                "Figura 34-4.1 Tierra_2.png",
-                "Figura 35-4.1 Tierra_3.png",
+                "Figura33-4.1Tierra_1.jpg",
+                "Figura34-4.1Tierra_2.png",
+                "Figura35-4.1Tierra_3.png",
               ]}
             />
 
@@ -1096,7 +1087,7 @@ function Metodologia() {
             </p>
 
             <h4 className="axis-subtitle">4.2. Agua</h4>
-            <FigureBlock files={["Figura 36-4.2 Agua_1.jpeg", "Figura 37-4.2 Agua_2.png"]} />
+            <FigureBlock files={["Figura36-4.2Agua_1.jpeg", "Figura37-4.2Agua_2.png"]} />
 
             <p className="axis-text">
               El agua emerge como uno de los núcleos más potentes de la contra-narrativa. Frente a los discursos institucionales que hablan de “cuidar la biodiversidad” o “ser parte del ecosistema”, estas voces denuncian la sobreexplotación de ríos, la contaminación por agroquímicos y la desviación de caudales para sostener el monocultivo. Los ríos Cauca, Sonso y Palo, así como las madres viejas y humedales, aparecen nombrados como cuerpos vulnerados, acompañados de memorias colectivas sobre procesos como la represa de La Salvajina o la desecación de zonas húmedas para ampliar la frontera cañera. La pregunta crítica se repite: ¿cómo hablar de biodiversidad cuando una sola especie domina el paisaje?
@@ -1107,7 +1098,7 @@ function Metodologia() {
             </p>
 
             <h4 className="axis-subtitle">4.3. Quemas</h4>
-            <FigureBlock files={["Figura 38-4.3 Quemas_1.jpg", "Figura 39-4.3 Quemas_2.jpg"]} />
+            <FigureBlock files={["Figura38-4.3Quemas_1.jpg", "Figura39-4.3Quemas_2.jpg"]} />
 
             <p className="axis-text">
               Las quemas (aunque hoy más reguladas por leyes) siguen siendo uno de los puntos más visibles y sensibles de la crítica ciudadana. En zonas rurales y urbanas persisten relatos sobre la “nieve negra”, el tizne que cubre techos y piel, los problemas respiratorios y el desplazamiento de fauna. Pero más allá del daño ambiental, lo que está contra-narrativa subraya es la experiencia corporal del humo: una presencia de la que no se puede escapar. El humo atraviesa puertas y ventanas, oscurece las casas, irrita la piel, obliga a cerrar todo y a modificar rutinas. Es un actor invasor que arrincona, tal como se muestra en La tierra y la sombra, donde el aire mismo se vuelve una forma de despojo cotidiano.
@@ -1124,9 +1115,9 @@ function Metodologia() {
             <h4 className="axis-subtitle">4.4. Trabajo</h4>
             <FigureBlock
               files={[
-                "Figura 40-4.4 Laboral_1.png",
-                "Figura 41-4.4 Laboral_2.jpg",
-                "Figura 42-4.4 Laboral_3.jpg",
+                "Figura40-4.4Laboral_1.png",
+                "Figura41-4.4Laboral_2.jpg",
+                "Figura42-4.4Laboral_3.jpg",
               ]}
             />
 
@@ -1155,9 +1146,9 @@ function Metodologia() {
             </p>
             <div className="metodologia-footnotes" aria-label="Notas al pie">
               <hr />
-              <ol start={11}>
-                <li id="fn11">
-                   Una contra-narrativa es un relato alternativo que cuestiona y desestabiliza la narrativa dominante al visibilizar experiencias, memorias y voces silenciadas por los discursos hegemónicos; no solo propone otra versión de la realidad, sino que evidencia las relaciones de poder que determinan qué historias se legitiman y cuáles se borran. Puede estar compuesta por contraimágenes, representaciones que desafían las imágenes oficiales para abrir la posibilidad de mirar, interpretar y habitar el territorio desde perspectivas críticas y resistentes. (<Link to="/archivos#refs-analisis-narrativo" className="ref-inline">Mignolo, 2011</Link>) (<Link to="/archivos#refs-analisis-narrativo" className="ref-inline">Martínez Hernández, 2018</Link>).<a href="#ref-11" className="footnote-back">↩</a>
+              <ol start={10}>
+                <li id="fn10">
+                   Una contra-narrativa es un relato alternativo que cuestiona y desestabiliza la narrativa dominante al visibilizar experiencias, memorias y voces silenciadas por los discursos hegemónicos; no solo propone otra versión de la realidad, sino que evidencia las relaciones de poder que determinan qué historias se legitiman y cuáles se borran. Puede estar compuesta por contraimágenes, representaciones que desafían las imágenes oficiales para abrir la posibilidad de mirar, interpretar y habitar el territorio desde perspectivas críticas y resistentes. (<Link to="/archivos#refs-analisis-narrativo" className="ref-inline">Mignolo, 2011</Link>) (<Link to="/archivos#refs-analisis-narrativo" className="ref-inline">Martínez Hernández, 2018</Link>).<a href="#ref-10" className="footnote-back">↩</a>
                 </li>
         
               </ol>
@@ -1173,7 +1164,7 @@ function Metodologia() {
         content: (
           <AxisArticle>
             <h3 className="axis-title">5. La caña en disputa</h3>
-            <FigureBlock files={["Figura 43-5.png"]} />
+            <FigureBlock files={["Figura43-5.png"]} />
 
             <p className="axis-text">
               Este eje reúne un conjunto de contra narrativas que cuestionan la hegemonía visual, simbólica y política de la industria cañera en el Valle del Cauca. A diferencia del eje anterior (centrado en los impactos concretos del monocultivo sobre el ambiente, el territorio y la vida cotidiana) aquí predominan narrativas que operan desde la retórica, la ironía y el uso subversivo de los propios lenguajes del poder. Aunque circulan en múltiples formatos, su presencia es especialmente fuerte en expresiones callejeras y efímeras, se reescriben los mensajes oficiales para mostrar sus fisuras. Esta narrativa no necesariamente busca una denuncia directa, sino que funcionan como gestos críticos que fracturan la imagen del valle “dulce”, “productivo” o “moderno”, exponiendo los silencios que sostienen esas promesas. Al apropiarse de los mismos repertorios visuales y discursivos de la industria, las contra-narrativas revelan la distancia entre la retórica hegemónica y las experiencias locales, invitando a mirar el paisaje cañero como un territorio donde también se ensayan otras formas de interpretar, habitar y contar el Valle.
@@ -1182,8 +1173,8 @@ function Metodologia() {
             <h4 className="axis-subtitle">5.1. El amargo saber del azúcar</h4>
             <FigureBlock
               files={[
-                "Figura 44-5.1 El amargo saber del azúcar_1.jpg",
-                "Figura 45-5.1 El amargo saber del azúcar_2.gif",
+                "Figura44-5.1Elamargosaberdelazucar_1.jpg",
+                "Figura45-5.1Elamargosaberdelazucar_2.gif",
               ]}
             />
 
@@ -1198,10 +1189,10 @@ function Metodologia() {
             <h4 className="axis-subtitle">5.2. Mas allá de la caña, otros paisajes</h4>
             <FigureBlock
               files={[
-                "Figura 46-5.2 Mas allá de la caña, otros paisajes_1.webp",
-                "Figura 47-5.2 Mas allá de la caña, otros paisajes_2.webp",
-                "Figura 48-5.2 Mas allá de la caña, otros paisajes_4.jpg",
-                "Figura 49-5.2 Mas allá de la caña, otros paisajes_4.png",
+                "Figura46-5.2Masalladelacana,otrospaisajes_1.webp",
+                "Figura47-5.2Masalladelacana,otrospaisajes_2.webp",
+                "Figura48-5.2Masalladelacana,otrospaisajes_4.jpg",
+                "Figura49-5.2Masalladelacana,otrospaisajes_4.png",
               ]}
             />
 
@@ -1220,9 +1211,9 @@ function Metodologia() {
             <h4 className="axis-subtitle">5.3. Desenmascarar el poder: críticas a la élite cañera</h4>
             <FigureBlock
               files={[
-                "Figura 50-5.3.Desenmascarar el poder_1.webp",
-                "Figura 51-5.3Desenmascarar el poder_2.jpg",
-                "Figura 52-5.3Desenmascarar el poder_3.jpg",
+                "Figura50-5.3.Desenmascararelpoder_1.webp",
+                "Figura51-5.3Desenmascararelpoder_2.jpg",
+                "Figura52-5.3Desenmascararelpoder_3.jpg",
               ]}
             />
 

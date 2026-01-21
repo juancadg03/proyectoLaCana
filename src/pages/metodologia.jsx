@@ -3,7 +3,7 @@ import React, { useMemo, useState, useEffect } from "react";
 import "./metodologia.css";
 import TalleresColaborativosSection from "../components/TalleresColaborativosSection";
 import vallaImg from "../assets/valla.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 
 /* =========================
@@ -1283,6 +1283,18 @@ function Metodologia() {
     return () => observer.disconnect();
   }, []);
 
+  // Scroll to hash fragment when location changes (e.g., /metodologia#tallerescolaborativos)
+  const location = useLocation();
+  useEffect(() => {
+    if (location && location.hash) {
+      const id = location.hash.replace("#", "");
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50);
+    }
+  }, [location]);
+
   const [activeAxis, setActiveAxis] = useState(null);
 
   const selected = activeAxis ? axes.find((a) => a.id === activeAxis) : null;
@@ -1397,7 +1409,9 @@ function Metodologia() {
       </section>
 
       {/* ================= TALLERES ================= */}
-      <TalleresColaborativosSection />
+      <section id="tallerescolaborativos">
+        <TalleresColaborativosSection />
+      </section>
     </main>
   );
 }

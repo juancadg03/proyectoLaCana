@@ -1,5 +1,6 @@
 // src/pages/home.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import MainMenu from "../components/MainMenu.jsx";
 
 import img1 from "../assets/img1.png";
@@ -38,14 +39,35 @@ function Home() {
       {/* Collage libre de imágenes */}
       <section className="image-collage-free">
         <div className="collage-layer">
-          <img src={img6}  alt="Camión cañero"       className="collage-img collage-img-6"  />
-          <img src={img5}  alt="Tractor"             className="collage-img collage-img-5"  />
+          <Link to="/metodologia#tallerescolaborativos">
+            <img src={img6}  alt="Camión cañero"       className="collage-img collage-img-6"  />
+          </Link>
+
+          <Link to="/contra-imagen#serigrafia">
+            <img src={img5}  alt="Tractor"             className="collage-img collage-img-5"  />
+          </Link>
+
           <img src={img1}  alt="Machete"             className="collage-img collage-img-1"  />
-          <img src={img4}  alt="Trabajador actual"   className="collage-img collage-img-4"  />
-          <img src={img2}  alt="Carrito de guarapo"  className="collage-img collage-img-2"  />
-          <img src={img3}  alt="Bus Cañaveral"       className="collage-img collage-img-3"  />
-          <img src={img10} alt="Cortero antiguo"     className="collage-img collage-img-10" />
-          <img src={img9}  alt="Cruce de tren cañero" className="collage-img collage-img-9" />
+
+          <Link to="/vinetas">
+            <img src={img4}  alt="Trabajador actual"   className="collage-img collage-img-4"  />
+          </Link>
+
+          <Link to="/contra-imagen#artivismo">
+            <img src={img2}  alt="Carrito de guarapo"  className="collage-img collage-img-2"  />
+          </Link>
+
+          <Link to="/archivos/etnografia-dashboard">
+            <img src={img3}  alt="Bus Cañaveral"       className="collage-img collage-img-3"  />
+          </Link>
+
+          <Link to="/archivos/archivos-dashboard">
+            <img src={img10} alt="Cortero antiguo"     className="collage-img collage-img-10" />
+          </Link>
+
+          <Link to="/archivos#refs-analisis-narrativo">
+            <img src={img9}  alt="Cruce de tren cañero" className="collage-img collage-img-9" />
+          </Link>
         </div>
       </section>
 

@@ -1,6 +1,7 @@
 // src/pages/contra-imagen.jsx
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import "./contra-imagen.css";
+import { Link, useLocation } from "react-router-dom";
 
 function buildImages(folder, prefix, start, end, ext) {
   var arr = [];
@@ -16,6 +17,7 @@ function buildImages(folder, prefix, start, end, ext) {
 }
 
 function Section(props) {
+  var id = props.id;
   var title = props.title;
   var desc = props.desc;
   var images = props.images;
@@ -26,7 +28,7 @@ function Section(props) {
   var sectionClass = "ci-section " + align;
 
   return (
-    <section className={sectionClass}>
+    <section id={id} className={sectionClass}>
       <div className={"ci-text " + accent}>
         <p className="ci-overline">Contra-imagen</p>
         <h2 className="ci-title">{title}</h2>
@@ -78,6 +80,18 @@ export default function ContraImagen() {
     setActiveAlt("");
   }
 
+  // Scroll to fragment if present (e.g., /contra-imagen#serigrafia)
+  const location = useLocation();
+  useEffect(() => {
+    if (location && location.hash) {
+      const id = location.hash.replace("#", "");
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50);
+    }
+  }, [location]);
+
   return (
     <main className="contra-imagen-page">
       <header className="contra-imagen-hero">
@@ -95,6 +109,7 @@ export default function ContraImagen() {
 
       <div className="ci-wrap">
         <Section
+          id="trabajadores"
           title="Trabajadores"
           desc=" El paisaje cañero como un verde que pica, dinámicas de los trabajadores de caña, mucho sol y la brisa que llega. Una realidad a pie de la carretera de unos con ciertos  privilegios y por otro lado una cotidianidad para muchos."
           images={trabajadores}
@@ -105,8 +120,8 @@ export default function ContraImagen() {
             setActiveAlt(alt);
           }}
         />
-
         <Section
+          id="serigrafia"
           title="Serigrafía"
           desc="Darle un rostro a un paisaje silenciado. Rastros de los paisajes porque detrás de cada verde hay huellas. Como una malla unas se ven otras quedan bloqueadas. Juego de traspasar la imagen. "
           images={serigrafia}
@@ -119,6 +134,7 @@ export default function ContraImagen() {
         />
 
         <Section
+          id="artivismo"
           title="Artivismo"
           desc="El arte como forma de acción colectiva/política y el activismo en una forma de creación política. Porque en la ciudad las paredes también hablan y están en constante debate narrativo. "
           images={artivismo}

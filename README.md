@@ -1,4 +1,4 @@
-<a href="https://lacanasecontrave.netlify.app" target="_blank" rel="noopener">Página del proyecto</a>
+<a href="https://lacanasecontrave.netlify.app" target="_blank" rel="noopener">Link</a>
 # Visualización crítica del paisaje cañero — Valle del Cauca
 
 Este repositorio contiene el código fuente de una **plataforma web interactiva** desarrollada con React, orientada a la visualización crítica del paisaje cañero en el Valle del Cauca. El proyecto articula investigación académica, análisis visual y diseño editorial digital para problematizar las narrativas hegemónicas de desarrollo asociadas a la agroindustria de la caña de azúcar.

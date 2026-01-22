@@ -185,6 +185,9 @@
   object-fit: cover;
   display: block;
   filter: grayscale(10%);
+  /* usar una variable para permitir rotaciones específicas sin romper el hover */
+  transform: rotate(var(--ci-rotate, 0deg));
+  transform-origin: center center;
   transition: transform 0.22s ease, filter 0.22s ease;
 }
 
@@ -194,8 +197,14 @@
 }
 
 .ci-card:hover .ci-img {
-  transform: scale(1.03);
+  /* conservar la rotación y aplicar escala al hacer hover */
+  transform: rotate(var(--ci-rotate, 0deg)) scale(1.03);
   filter: grayscale(0%);
+}
+
+/* clase utilitaria para rotar 90 grados hacia la derecha */
+.rotate-90 {
+  --ci-rotate: 90deg;
 }
 
 /* Responsive */

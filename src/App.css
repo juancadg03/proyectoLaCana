@@ -30,7 +30,7 @@
      OJO: la PRIMERA es la que va ENCIMA
   */
   background-image:
-    url("./assets/fondo.png"),
+    url("/assets/fondo.png"),
     linear-gradient(
       to top,
       #F2F2F2 0%,

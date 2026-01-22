@@ -3,12 +3,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./vinetas.css";
 
-import imgPaisaje from "../assets/vinetas/Paisaje.jpeg";                  // paisaje cañero
-import imgVerde from "../assets/vinetas/Distintos-tonos-de-verdes.jpg";    // o Distintos tonos de verdes.jpg
-import imgHablar from "../assets/vinetas/Hablar-desde-un-lugar.jpg";
-import imgBrisa from "../assets/vinetas/Cuando-la-brisa-llega-y-el-sol-se-queda.jpg"; 
-import imgpaije from "../assets/vinetas/paisaje2.jpg"; 
-import imgcmezcla from "../assets/vinetas/la-cinica-de-la-mezcla.jpg"; 
+// ✅ Como moviste todo a /public, las imágenes se referencian por URL
+//    Si tus imágenes están en: public/assets/vinetas/...
+//    entonces aquí van así: "/assets/vinetas/..."
+const imgPaisaje = "/assets/vinetas/Paisaje.jpeg"; // paisaje cañero
+const imgVerde = "/assets/vinetas/Distintos-tonos-de-verdes.jpg";
+const imgHablar = "/assets/vinetas/Hablar-desde-un-lugar.jpg";
+const imgBrisa = "/assets/vinetas/Cuando-la-brisa-llega-y-el-sol-se-queda.JPG";
+const imgpaije = "/assets/vinetas/paisaje2.jpg";
+const imgcmezcla = "/assets/vinetas/la-cinica-de-la-mezcla.jpg";
 
 const vinetas = [
   {
@@ -54,12 +57,13 @@ function Vinetas() {
     <main className="vinetas-page">
       <section className="vinetas-hero">
         <p className="vinetas-overline">Viñetas etnográficas</p>
-        <h1 className="vinetas-title">
-          Mirar el paisaje cañero desde otros lugares
-        </h1>
+        <h1 className="vinetas-title">Mirar el paisaje cañero desde otros lugares</h1>
         <p className="vinetas-description">
-          Viñetas de sensibilidades es una sección compuesta por recuadros que cuentan pequeñas historias. Aquí se reúnen fragmentos de pensamientos, notas de salidas de campo y opiniones construidas. Son miradas situadas sobre el paisaje cañero y la agroindustria de la caña de azúcar, que buscan capturar sensaciones, tensiones y preguntas que emergen en el recorrido. 
-
+          Viñetas de sensibilidades es una sección compuesta por recuadros que cuentan pequeñas
+          historias. Aquí se reúnen fragmentos de pensamientos, notas de salidas de campo y
+          opiniones construidas. Son miradas situadas sobre el paisaje cañero y la agroindustria
+          de la caña de azúcar, que buscan capturar sensaciones, tensiones y preguntas que emergen
+          en el recorrido.
         </p>
       </section>
 
@@ -71,6 +75,7 @@ function Vinetas() {
                 src={item.image}
                 alt={item.title}
                 className="vineta-image"
+                loading="lazy"
               />
             </div>
 
@@ -78,10 +83,7 @@ function Vinetas() {
               <h2 className="vineta-card-title">{item.title}</h2>
               <p className="vineta-card-text">{item.subtitle}</p>
 
-              <Link
-                to={`/vinetas/${item.id}`}
-                className="vineta-link"
-              >
+              <Link to={`/vinetas/${item.id}`} className="vineta-link">
                 Leer viñeta
               </Link>
             </div>

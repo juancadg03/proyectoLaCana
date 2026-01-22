@@ -2,9 +2,8 @@
 import React, { useMemo, useState, useEffect } from "react";
 import "./metodologia.css";
 import TalleresColaborativosSection from "../components/TalleresColaborativosSection";
-import vallaImg from "../assets/valla.png";
 import { Link, useLocation } from "react-router-dom";
-
+const vallaImg = "/valla.png";
 
 /* =========================
    TIMELINE DATA
@@ -363,10 +362,12 @@ const timelineItems = [
 
 /* =========================
    FIGURAS (ARCHIVO + NOTA)
-   Carpeta esperada: src/assets/figuras/
+   Carpeta esperada: public/assets/figuras/
+   Uso en React: /assets/figuras/<archivo>
 ========================= */
-const figureMeta = {
+const FIGURES_BASE = "/assets/figuras";
 
+const figureMeta = {
   // 1 (Transformación - general)
   "Figura1-1.png": {
     figLabel: "Figura 1. Incauca",
@@ -377,8 +378,7 @@ const figureMeta = {
   // 1.1 Cuidado
   "Figura2-1.1-Cuidado_1.png": {
     figLabel: "Figura 2. Portada sitio web de Manuelita",
-    note:
-      "Nota. Imagen publicada en el sitio web de Manuelita. s. f. https://www.manuelita.com/",
+    note: "Nota. Imagen publicada en el sitio web de Manuelita. s. f. https://www.manuelita.com/",
   },
   "Figura3-1.1-Cuidado_2.png": {
     figLabel: "Figura 3. Storie destacada “Somos azúcar…”",
@@ -573,8 +573,7 @@ const figureMeta = {
   // 4.2 Agua
   "Figura36-4.2Agua_1.jpeg": {
     figLabel: "Figura 36. Afiche por el cuidado del agua",
-    note:
-      "Nota. Fotografía de Gabriela Cobo, Universidad del Valle, octubre de 2025.",
+    note: "Nota. Fotografía de Gabriela Cobo, Universidad del Valle, octubre de 2025.",
   },
   "Figura37-4.2Agua_2.png": {
     figLabel: "Figura 37. Enramada — Despojo de tierras y aguas",
@@ -667,8 +666,8 @@ const figureMeta = {
    helpers
 ========================= */
 function figSrc(fileName) {
-  // Vite / bundlers modernos:
-  return new URL(`../assets/figuras/${fileName}`, import.meta.url).href;
+  // Public folder: se sirve desde la raíz del sitio
+  return `${FIGURES_BASE}/${encodeURIComponent(fileName)}`;
 }
 
 function FigureBlock({ files = [] }) {
@@ -709,7 +708,7 @@ function Metodologia() {
       {
         id: "transformacion",
         label: "1. Transformación",
-        pos: { top: "28%", left: "25%" },
+        pos: { top: "20%", left: "25%" },
         content: (
           <AxisArticle>
             <h3 className="axis-title">1. Transformación</h3>
@@ -845,7 +844,7 @@ function Metodologia() {
       {
         id: "identitario",
         label: "2. Identitario",
-        pos: { top: "35%", left: "55%" },
+        pos: { top: "37%", left: "50%" },
         content: (
           <AxisArticle>
             <h3 className="axis-title">2. Identitario</h3>
@@ -873,7 +872,7 @@ function Metodologia() {
             />
 
             <p className="axis-text">
-              Uno de los elementos centrales de esta narrativa identitaria es el uso del trapiche como símbolo fundacional. Uno de los elementos centrales de esta narrativa identitaria es el uso del trapiche como símbolo fundacional. La figura del trapiche funciona como puente entre historia y presente: representa los orígenes artesanales de la producción de azúcar y, al mismo tiempo, está vinculada a economías locales campesinas y paneleras que existen fuera (y a veces en tensión) con los ingenios. Museos como el Museo de la Caña o Haciendas coloniales construyen sus guiones curatoriales a partir de la historia del trapiche, presentando una trayectoria técnica ascendente hacia la agroindustria moderna. Este recorrido, acompañado de fotografías antiguas, maquetas y relatos, produce una genealogía en la que la industria aparece como la heredera “natural” de un proceso histórico continuo.
+              Uno de los elementos centrales de esta narrativa identitaria es el uso del trapiche como símbolo fundacional. La figura del trapiche funciona como puente entre historia y presente: representa los orígenes artesanales de la producción de azúcar y, al mismo tiempo, está vinculada a economías locales campesinas y paneleras que existen fuera (y a veces en tensión) con los ingenios. Museos como el Museo de la Caña o Haciendas coloniales construyen sus guiones curatoriales a partir de la historia del trapiche, presentando una trayectoria técnica ascendente hacia la agroindustria moderna. Este recorrido, acompañado de fotografías antiguas, maquetas y relatos, produce una genealogía en la que la industria aparece como la heredera “natural” de un proceso histórico continuo.
             </p>
 
             <p className="axis-text">
@@ -927,7 +926,7 @@ function Metodologia() {
       {
         id: "progreso",
         label: "3. Progreso",
-        pos: { top: "30%", left: "77%" },
+        pos: { top: "40%", left: "77%" },
         content: (
           <AxisArticle>
             <h3 className="axis-title">3. Progreso</h3>
@@ -1160,7 +1159,7 @@ function Metodologia() {
       {
         id: "disputa",
         label: "5. La caña en disputa",
-        pos: { top: "52%", left: "78%" },
+        pos: { top: "60%", left: "78%" },
         content: (
           <AxisArticle>
             <h3 className="axis-title">5. La caña en disputa</h3>
@@ -1302,7 +1301,7 @@ function Metodologia() {
   return (
     <main className="metodologia-page">
       {/* ================= HERO ================= */}
-      <section className="metodologia-hero">
+      <section className="metodologia-hero" id="analisisnarrativo">
         <p className="metodologia-overline">Metodología</p>
         <h1 className="metodologia-title">Análisis narrativo</h1>
          <p className="metodologia-intro">
@@ -1334,7 +1333,7 @@ function Metodologia() {
       <section className="axes-section">
         <div className="billboard-wrap">
           <div className="billboard-stage">
-            <img className="billboard-img" src={vallaImg} alt="Valla de ejes" />
+            <img className="billboard-img" src="/assets/valla.png" alt="Valla de ejes" />
 
             <div className="billboard-overlay">
               {axes.map((axis) => {

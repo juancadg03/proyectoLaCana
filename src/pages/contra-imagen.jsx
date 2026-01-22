@@ -5,12 +5,17 @@ import { Link, useLocation } from "react-router-dom";
 
 function buildImages(folder, prefix, start, end, ext) {
   var arr = [];
+  var base = import.meta.env.BASE_URL; // para deploy en subcarpeta
   var i = 0;
 
   for (i = start; i <= end; i = i + 1) {
     var filename = prefix + i + ext;
-    var href = new URL("../assets/" + folder + "/" + filename, import.meta.url).href;
-    arr.push({ src: href, alt: filename });
+
+    // ✅ PUBLIC: public/assets/...  =>  /assets/...
+    // base ya incluye "/" final en Vite (ej: "/" o "/mi-repo/")
+    var src = base + "assets/" + folder + "/" + filename;
+
+    arr.push({ src: src, alt: filename });
   }
 
   return arr;
@@ -42,11 +47,18 @@ function Section(props) {
               className="ci-card"
               key={img.src + "_" + idx}
               onClick={function () {
-                onSelect(img.src, img.alt);
+                if (onSelect) {
+                  onSelect(img.src, img.alt);
+                }
               }}
             >
               <img
-                className="ci-img"
+                className={
+                  "ci-img" +
+                  (img && img.alt && /^artivismo_(?:1|2)(?:\.[^.]+)?$/.test(img.alt)
+                    ? " rotate-90"
+                    : "")
+                }
                 src={img.src}
                 alt={img.alt}
                 loading="lazy"
@@ -63,6 +75,7 @@ export default function ContraImagen() {
   var [activeImg, setActiveImg] = useState(null);
   var [activeAlt, setActiveAlt] = useState("");
 
+  // ✅ Carpetas en public/assets (respeta mayúsculas como las tienes en Windows)
   var trabajadores = useMemo(function () {
     return buildImages("Fotoensayo", "fotoTrabajadores", 1, 14, ".jpg");
   }, []);
@@ -80,17 +93,36 @@ export default function ContraImagen() {
     setActiveAlt("");
   }
 
-  // Scroll to fragment if present (e.g., /contra-imagen#serigrafia)
-  const location = useLocation();
-  useEffect(() => {
+  // Scroll a fragmento si existe (/contra-imagen#serigrafia)
+  var location = useLocation();
+  useEffect(function () {
     if (location && location.hash) {
-      const id = location.hash.replace("#", "");
-      setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      var id = location.hash.replace("#", "");
+      setTimeout(function () {
+        var el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       }, 50);
     }
   }, [location]);
+
+  // Cerrar con ESC
+  useEffect(function () {
+    function onKey(e) {
+      if (e.key === "Escape") {
+        closeModal();
+      }
+    }
+
+    if (activeImg !== null) {
+      window.addEventListener("keydown", onKey);
+    }
+
+    return function () {
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [activeImg]);
 
   return (
     <main className="contra-imagen-page">
@@ -103,7 +135,8 @@ export default function ContraImagen() {
           Didi-Huberman
           <br />
           <br />
-          Una contra-imagen es esa imagen que lucha con otra sensibilidad, otro afecto, otra mirada…Es una respuesta crítica a las imágenes dominantes que han construido la realidad de cierta manera.
+          Una contra-imagen es esa imagen que lucha con otra sensibilidad, otro afecto, otra mirada…Es una
+          respuesta crítica a las imágenes dominantes que han construido la realidad de cierta manera.
         </p>
       </header>
 
@@ -111,7 +144,7 @@ export default function ContraImagen() {
         <Section
           id="trabajadores"
           title="Trabajadores"
-          desc=" El paisaje cañero como un verde que pica, dinámicas de los trabajadores de caña, mucho sol y la brisa que llega. Una realidad a pie de la carretera de unos con ciertos  privilegios y por otro lado una cotidianidad para muchos."
+          desc=" El paisaje cañero como un verde que pica, dinámicas de los trabajadores de caña, mucho sol y la brisa que llega. Una realidad a pie de la carretera de unos con ciertos  privilegios y por otro lado una cotidianidad para muchos. ( fotografías tomadas por Jhu Piñeros, 2025)"
           images={trabajadores}
           align="text-left"
           accent="accent-a"
@@ -120,6 +153,7 @@ export default function ContraImagen() {
             setActiveAlt(alt);
           }}
         />
+
         <Section
           id="serigrafia"
           title="Serigrafía"
@@ -156,7 +190,13 @@ export default function ContraImagen() {
               e.stopPropagation();
             }}
           >
-            <button className="ci-modal-close" onClick={closeModal}>
+            <button
+              className="ci-modal-close"
+              onClick={function (e) {
+                e.stopPropagation();
+                closeModal();
+              }}
+            >
               ✕
             </button>
             <img src={activeImg} alt={activeAlt} className="ci-modal-img" />

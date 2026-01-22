@@ -9,7 +9,6 @@ var RAW_FILENAMES = [
   "fotoEtno12.jpeg",
   "fotoEtno14.jpg",
   "fotoEtno15.jpg",
-  "fotoEtno16.jpg",
   "fotoEtno17.jpg",
   "fotoEtno18.jpg",
   "fotoEtno19.jpeg",
@@ -45,7 +44,8 @@ var RAW_FILENAMES = [
 ];
 
 function fileToUrl(filename) {
-  return new URL("../assets/etnografia/" + filename, import.meta.url).href;
+  // ✅ PUBLIC en Vite: se referencia desde raíz con /assets/...
+  return "/assets/etnografia/" + filename;
 }
 
 function getExt(filename) {
@@ -55,12 +55,10 @@ function getExt(filename) {
 }
 
 function normalizeName(filename) {
-  // Para búsqueda: minúsculas + sin dobles espacios + trim
   return filename.toLowerCase().replace(/\s+/g, " ").trim();
 }
 
 function prettifyLabel(filename) {
-  // Quita extensión y limpia espacios para mostrarlo bonito
   var base = filename.replace(/\.[^/.]+$/, "");
   base = base.replace(/\s+/g, " ").trim();
   return base;
@@ -104,14 +102,13 @@ function Modal(props) {
   var onPrev = props.onPrev;
   var onNext = props.onNext;
   var indexLabel = props.indexLabel;
-  // estado local para rotación (grados)
+
   var _React$useState = React.useState(0),
     rotation = _React$useState[0],
     setRotation = _React$useState[1];
 
   React.useEffect(
     function () {
-      // al abrir o cambiar foto, reiniciamos rotación
       setRotation(0);
     },
     [isOpen, photo && photo.filename]
@@ -194,7 +191,6 @@ export default function EtnografiaDashboard() {
   var photos = useMemo(function () {
     var arr = RAW_FILENAMES.slice(0);
 
-    // Orden básico: primero por nombre normalizado (no cronológico real, pero consistente)
     arr.sort(function (a, b) {
       var na = normalizeName(a);
       var nb = normalizeName(b);
@@ -206,9 +202,9 @@ export default function EtnografiaDashboard() {
     return arr.map(function (filename, idx) {
       return {
         idx: idx,
-        filename: filename, // nombre original del archivo (mantener para mapping)
-        originalTitle: prettifyLabel(filename), // título original legible
-        title: "fotoEtnografica" + (idx + 1), // título mostrado secuencial
+        filename: filename,
+        originalTitle: prettifyLabel(filename),
+        title: "fotoEtnografica" + (idx + 1),
         ext: getExt(filename),
         src: fileToUrl(filename),
         searchKey: normalizeName(filename)
@@ -336,7 +332,6 @@ export default function EtnografiaDashboard() {
             >
               Cargar más
             </button>
-            <p className="ed-loadmore-hint">Render por lotes para mantener fluidez.</p>
           </div>
         )}
       </section>

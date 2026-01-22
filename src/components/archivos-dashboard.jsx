@@ -59,11 +59,11 @@ var RAW_FILENAMES = [
   "26.jpg",
   "27.jpg",
   "28.jpg",
-  "29..jpg",
+  "29.jpg",
   "3.jpg",
   "30.jpg",
   "31.jpg",
-  "32..jpg",
+  "32.jpg",
   "33.jpg",
   "34.jpg",
   "35.jpg",
@@ -139,24 +139,65 @@ var RAW_FILENAMES = [
   "99.jpeg"
 ];
 
-function fileToUrl(filename) {
-  return new URL("../assets/fotosArchivo/" + filename, import.meta.url).href;
+function sanitizeFilename(filename) {
+  // Normaliza: "29..jpg" -> "29.jpg", también limpia triples puntos si llegaran
+  return (filename || "").trim().replace(/\.\.+/g, ".");
+}
+
+function baseUrl() {
+  var b = import.meta.env.BASE_URL || "/";
+  if (b.length === 0) return "/";
+  if (b[b.length - 1] !== "/") b = b + "/";
+  return b;
+}
+
+function fileToUrlFromName(filename) {
+  var fixed = sanitizeFilename(filename);
+  // encodeURIComponent para evitar problemas raros si hay espacios u otros chars
+  return baseUrl() + "assets/fotosArchivo/" + encodeURIComponent(fixed);
+}
+
+function filenameCandidates(filename) {
+  var fixed = sanitizeFilename(filename);
+  var m = fixed.match(/^(.+)\.([a-zA-Z0-9]+)$/);
+  if (!m) return [fixed];
+
+  var name = m[1];
+  var ext = (m[2] || "").toLowerCase();
+
+  // Candidatos por extensión: útil para Windows-vs-Linux y .jpeg vs .jpg
+  var candidates = [];
+  candidates.push(name + "." + ext);
+
+  if (ext === "jpeg") candidates.push(name + ".jpg");
+  if (ext === "jpg") candidates.push(name + ".jpeg");
+
+  // Algunos archivos pueden estar en png/webp aunque el array diga jpg/jpeg
+  candidates.push(name + ".png");
+  candidates.push(name + ".webp");
+
+  // Quita duplicados manteniendo orden
+  var seen = {};
+  var out = [];
+  var i = 0;
+  for (i = 0; i < candidates.length; i = i + 1) {
+    var c = candidates[i];
+    if (!seen[c]) {
+      seen[c] = true;
+      out.push(c);
+    }
+  }
+  return out;
 }
 
 function numericIdFromFilename(filename) {
-  // "134.jpeg" -> 134 ; "29..jpg" -> 29
-  var m = filename.match(/^(\d+)/);
+  var fixed = sanitizeFilename(filename);
+  var m = fixed.match(/^(\d+)/);
   if (!m) return 0;
   return parseInt(m[1], 10);
 }
 
-function sanitizeFilename(filename) {
-  // "29..jpg" -> "29.jpg" ; "32..jpg" -> "32.jpg"
-  return filename.replace("..", ".");
-}
-
 function renderRefWithLink(text) {
-  // Si hay un link, lo vuelve <a>, si no deja texto normal.
   var idx = text.indexOf("http://");
   var idx2 = text.indexOf("https://");
   var start = -1;
@@ -180,6 +221,7 @@ function renderRefWithLink(text) {
   );
 }
 
+/* ✅ Referencias (pegadas tal como las enviaste; si faltan más, me las mandas y las agrego) */
 var REFERENCIAS = [
   "Río Cauca-Vapor Cali. (s.f). [Fotografía]. Archivo de Alberto Lenis Burckand. En Fundema, Santiago de Cali, estampas de ayer imágenes de hoy (p.67). Editorial Feriva, Cali-Colombia",
   "Rio Cauca-Vapor Sucre. (s.f). [Fotografía]. Archivo de Alberto Lenis Burckand. En Fundema, Santiago de Cali, estampas de ayer imágenes de hoy (p.67). Editorial Feriva, Cali-Colombia",
@@ -205,22 +247,22 @@ var REFERENCIAS = [
   "Zitzmann Betancour, C. (s.f.). [Acuaparque de la caña] [Fotografía]. En Vega, C. M. (1990), Valle del Cauca (p. 187). Gamma.",
   "Zitzmann Betancour, C. (s.f.). El sendero del desarrollo] [Fotografía]. En Vega, C. M. (1990), Valle del Cauca (p. 7-8). Gamma.",
   "Zitzmann Betancour, C. (s.f.). [Donación de Asocaña] [Fotografía]. En Vega, C. M. (1990), Valle del Cauca (p. 23). Gamma.",
-  "25.s. n. & s. n. (1952). Embarcación de la época para la navegación del río Cauca & 200237. OTRO: Biblioteca Departamental Jorge Garces Borrero.https://audiovisuales.icesi.edu.co/handle/123456789/18898",
-  "s. n., s. n. & s. n. (1999). Derrumbe por el desbordamiento del río Guabas en la Vereda Regaderos & 602821. GINEBRA: Biblioteca Departamental Jorge Garces Borrero.https://audiovisuales.icesi.edu.co/handle/123456789/18864",
-  "s. n., s. n., s. n. & s. n. (1930). Con traje de pescador de la época & 200264. OTRO: Biblioteca Departamental Jorge Garces Borrero.https://audiovisuales.icesi.edu.co/handle/123456789/18842",
+  "25. s. n. & s. n. (1952). Embarcación de la época para la navegación del río Cauca & 200237. OTRO: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/18898",
+  "s. n., s. n. & s. n. (1999). Derrumbe por el desbordamiento del río Guabas en la Vereda Regaderos & 602821. GINEBRA: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/18864",
+  "s. n., s. n., s. n. & s. n. (1930). Con traje de pescador de la época & 200264. OTRO: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/18842",
   "28. s. n. (1960). Paisaje del río Cauca & 103520. BUGALAGRANDE: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/18807",
-  "s. n., s. n. & s. n. (1984). Campesino observando el paisaje & 300810. OTRO: Biblioteca Departamental Jorge Garces Borrero.https://audiovisuales.icesi.edu.co/handle/123456789/18786",
+  "s. n., s. n. & s. n. (1984). Campesino observando el paisaje & 300810. OTRO: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/18786",
   "PEDRO A. RIASCOS (1900). Cali a la luz de la luna & 501107. OTRO: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/18776",
-  "J.I.BORRERO (1990). Bosques de la Reserva Natural de Yotoco a cargo de la C & 700070. YOTOCO: Biblioteca Departamental Jorge Garces Borrero.https://audiovisuales.icesi.edu.co/handle/123456789/18771",
-  "s. n., s. n. & s. n. (1956). La madre vieja Videles se constituyó en un lugar tradicional para paseos familiares & 103344. GUACARI: Biblioteca Departamental Jorge Garces Borrero.https://audiovisuales.icesi.edu.co/handle/123456789/18763",
-  "LILIANA GARCIA MENESES (1989). Aspecto de los farallones de Cali & 202978. SANTIAGO DE CALI: Biblioteca Departamental Jorge Garces Borrero.https://audiovisuales.icesi.edu.co/handle/123456789/18716",
-  "Julio Achuri (1947). Ricardo Padilla Nieto pescando bocachico en el río Cauca, entre Buga y Chabimbal & B014. BUGA: Biblioteca Departamental Jorge Garces Borrero.https://audiovisuales.icesi.edu.co/handle/123456789/18671",
-  "s. n. & s. n. (1940). Paisaje del río Cauca & A008. SANTIAGO DE CALI: Biblioteca Departamental Jorge Garces Borrero.https://audiovisuales.icesi.edu.co/handle/123456789/18644",
+  "J.I.BORRERO (1990). Bosques de la Reserva Natural de Yotoco a cargo de la C & 700070. YOTOCO: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/18771",
+  "s. n., s. n. & s. n. (1956). La madre vieja Videles se constituyó en un lugar tradicional para paseos familiares & 103344. GUACARI: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/18763",
+  "LILIANA GARCIA MENESES (1989). Aspecto de los farallones de Cali & 202978. SANTIAGO DE CALI: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/18716",
+  "Julio Achuri (1947). Ricardo Padilla Nieto pescando bocachico en el río Cauca, entre Buga y Chabimbal & B014. BUGA: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/18671",
+  "s. n. & s. n. (1940). Paisaje del río Cauca & A008. SANTIAGO DE CALI: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/18644",
   "s. n. (1985). Valle Geográfico del río Cauca & 700051. OTRO: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/18529",
   "Alberto Lenis Burckhardt (1935). Pescadores en el río Cauca & 605331. SANTIAGO DE CALI: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/18502",
-  "s. n., s. n., s. n. & s. n. (1960). Paseo familiar en canoa por el río Cauca & 102096. SANTIAGO DE CALI: Biblioteca Departamental Jorge Garces Borrero.https://audiovisuales.icesi.edu.co/handle/123456789/18486",
-  "s. n. & s. n. (1930). Vapor por el río Cauca entrando a Buga & 603557. BUGA: Biblioteca Departamental Jorge Garces Borrero.https://audiovisuales.icesi.edu.co/handle/123456789/18438",
-  "Pedro A. Riascos (1940). Ocaso sobre el río Cali & 501393. OTRO: Biblioteca Departamental Jorge Garces Borrero.https://audiovisuales.icesi.edu.co/handle/123456789/18329",
+  "s. n., s. n., s. n. & s. n. (1960). Paseo familiar en canoa por el río Cauca & 102096. SANTIAGO DE CALI: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/18486",
+  "s. n. & s. n. (1930). Vapor por el río Cauca entrando a Buga & 603557. BUGA: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/18438",
+  "Pedro A. Riascos (1940). Ocaso sobre el río Cali & 501393. OTRO: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/18329",
   "El País. (1954). The Cauca Valley Bible [Caricatura].",
   "INCORA. (1967). Five years of agrarian reform: Report of activities, 1966. Bogotá: INCORA.",
   "CVC. (2004). [Fotografía de Bernardo Garcés Córdoba y un grupo de ingenieros en el sitio de la represa Calima, ca. 1960]. En Génesis y desarrollo de una visión de progreso (p. 133). CVC.",
@@ -235,7 +277,7 @@ var REFERENCIAS = [
   "Sánchez, I. (1986). Marcha en contra de la construcción de la represa Salvajina [Fotografía]. Recuperado de https://gaceta.co/contenidos/bajo-el-agua-de-la-salvajina/",
   "López, V. (s. f.). Salvajina: una promesa aún incumplida [Fotoensayo fotográfico]. Blog Víctor López. https://phvictorlopez.blogspot.com/p/salvajina-una-promesa-aun-incumplida.html",
   "Cine Colombia. (s. f.). Pura sangre [Afiche de película]. https://www.proimagenescolombia.com/secciones/cine_colombiano/peliculas_colombianas/pelicula_plantilla.php?id_pelicula=147",
-  "s. n. & s. n. (1900). Terrenos como el que apreciamos en esta imagen permanecen, todavía, en manos de pequeños propietarios que, no obstante dedicarse a una actividad agrícola diferente a la caña, frutas tropicales, sobreviven económicamente 103519. BUGALAGRANDE: Biblioteca Departamental Jorge Garces Borrero.https://audiovisuales.icesi.edu.co/handle/123456789/18796",
+  "s. n. & s. n. (1900). Terrenos como el que apreciamos en esta imagen permanecen, todavía, en manos de pequeños propietarios que, no obstante dedicarse a una actividad agrícola diferente a la caña, frutas tropicales, sobreviven económicamente 103519. BUGALAGRANDE: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/18796",
   "Bartelsman, J. (s.f.). Cerro de las tres cruces. Revista Semana Historia contada desde las regiones. Recuperado de https://www.bonbar.co",
   "Martha Ines Ramos (1975). Ingenio Cauca, recolección y corte de caña & B164. OTRO: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/427",
   "s. n. & s. n. (1900). Corteros de caña & 601830. ZARZAL: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/391",
@@ -252,7 +294,7 @@ var REFERENCIAS = [
   "s. n. & s. n. (1940). Reguladoras hidraúlicas del trapiche, Ingenio Central Castilla & 102106. PRADERA: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/1224",
   "s. n. (1946). Trabajadores frente a los tractores & 300172. OTRO: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/756",
   "s. n. & s. n. (1946). Panorámica de la nueva fábrica azucarera de La Manuelita & 300013. PALMIRA: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/1176",
-  "s. n., s. n., s. n., s. n. & s. n. (1965). Grua descargadora de la caña de azúcar para luego pasarla a las fábricas & 602626. GUACARI: Biblioteca Departamental Jorge Garces Borrero.https://audiovisuales.icesi.edu.co/handle/123456789/1098",
+  "s. n., s. n., s. n., s. n. & s. n. (1965). Grua descargadora de la caña de azúcar para luego pasarla a las fábricas & 602626. GUACARI: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/1098",
   "s. n. & s. n. (1985). FOTO QUE NO CORRESPONDE A LA TEMATICA DEL VALLE DEL CAUCA Planta generadora de energia La Salvajina & 500628. OTRO: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/1089",
   "FOTO MULT (1940). Otro aspecto de las dependencias del Ingenio Manuelita & 300016. PALMIRA: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/1168",
   "s. n. & s. n. (1946). Panorámica de la nueva fábrica azucarera de La Manuelita & 300011. PALMIRA: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/1172",
@@ -314,8 +356,21 @@ var REFERENCIAS = [
   "s. n. & s. n. (1900). Alrededores del Ingenio Central Castilla & 501462. PRADERA: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/1331",
   "s. n. & s. n. (1953). Trabajadoras y trabajadores de la Hacienda Arroyohondo en los terrenos de cultivo de caña de azúcar & 604985. YUMBO: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/1328",
   "s. n. & s. n. (1954). Extracción del jugo de caña en finca campesina, Palmira, C & 102887. PALMIRA: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/1314",
-  "FRANKLIN NAVIA (2000). Plano de los ingenios azucareros del Valle del Cauca en el Parque de la Caña en Palmira & 602406. PALMIRA: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/1310",
+  "FRANKLIN NAVIA (2000). Plano de los ingenios azucareros del Valle del Cauca en el Parque de la Caña en Palmira & 602406. PALMIRA: Biblioteca Departamental Jorge Garces Borrero. https://audiovisuales.icesi.edu.co/handle/123456789/1310"
 ];
+
+function tryFallbackImage(e, filename) {
+  var el = e.currentTarget;
+  var candidates = filenameCandidates(filename);
+  var attempt = parseInt(el.dataset.attempt || "0", 10);
+
+  // attempt 0 = ya intentó la primera URL (la actual)
+  var nextAttempt = attempt + 1;
+  if (nextAttempt >= candidates.length) return;
+
+  el.dataset.attempt = String(nextAttempt);
+  el.src = fileToUrlFromName(candidates[nextAttempt]);
+}
 
 function Thumb(props) {
   var photo = props.photo;
@@ -338,11 +393,7 @@ function Thumb(props) {
           loading="lazy"
           decoding="async"
           onError={function (e) {
-            // fallback si el nombre venía con doble punto
-            var fixed = sanitizeFilename(photo.filename);
-            if (fixed !== photo.filename) {
-              e.currentTarget.src = fileToUrl(fixed);
-            }
+            tryFallbackImage(e, photo.filename);
           }}
         />
       </div>
@@ -361,7 +412,7 @@ function Modal(props) {
   var onPrev = props.onPrev;
   var onNext = props.onNext;
   var indexLabel = props.indexLabel;
-  // estado local para rotación
+
   var _React$useState = React.useState(0),
     rotation = _React$useState[0],
     setRotation = _React$useState[1];
@@ -429,16 +480,13 @@ function Modal(props) {
             decoding="async"
             style={{ transform: "rotate(" + rotation + "deg)" }}
             onError={function (e) {
-              var fixed = sanitizeFilename(photo.filename);
-              if (fixed !== photo.filename) {
-                e.currentTarget.src = fileToUrl(fixed);
-              }
+              tryFallbackImage(e, photo.filename);
             }}
           />
         </div>
 
         <div className="ad-modal-foot">
-          <span className="ad-foot-chip">{photo.filename}</span>
+          <span className="ad-foot-chip">{sanitizeFilename(photo.filename)}</span>
           <span className="ad-foot-hint">ESC para cerrar • ←/→ para navegar</span>
         </div>
       </div>
@@ -454,13 +502,13 @@ export default function ArchivosDashboard() {
   var [activeIndex, setActiveIndex] = useState(-1);
 
   var photos = useMemo(function () {
-    // dedup + orden numérico
     var map = {};
     var arr = [];
     var i = 0;
 
     for (i = 0; i < RAW_FILENAMES.length; i = i + 1) {
-      var f = RAW_FILENAMES[i];
+      var fRaw = RAW_FILENAMES[i];
+      var f = sanitizeFilename(fRaw);
       if (!map[f]) {
         map[f] = true;
         arr.push(f);
@@ -482,7 +530,7 @@ export default function ArchivosDashboard() {
         filename: filename,
         ext: ext,
         label: "Imagen " + id,
-        src: fileToUrl(filename)
+        src: fileToUrlFromName(filename)
       };
     });
   }, []);
@@ -491,7 +539,6 @@ export default function ArchivosDashboard() {
     var q = query.trim().toLowerCase();
     if (q.length === 0) return photos;
 
-    // si escriben "12" o "#12" -> filtra por id
     var qNum = q.replace("#", "");
     var asNum = parseInt(qNum, 10);
 
@@ -517,12 +564,10 @@ export default function ArchivosDashboard() {
   }, [activeIndex, filtered]);
 
   function openPhoto(photo) {
-    // encuentra el índice dentro del array filtrado (lo que ve el usuario)
     var i = 0;
     for (i = 0; i < filtered.length; i = i + 1) {
       if (filtered[i].id === photo.id && filtered[i].filename === photo.filename) {
         setActiveIndex(i);
-        break;
       }
     }
     setIsOpen(true);
@@ -562,7 +607,6 @@ export default function ArchivosDashboard() {
   }, [isOpen, activeIndex, filtered]);
 
   useEffect(function () {
-    // al cambiar búsqueda, reinicia lotes para que se vea inmediato
     setVisibleCount(36);
   }, [query]);
 
@@ -574,9 +618,7 @@ export default function ArchivosDashboard() {
       <header className="ad-hero">
         <p className="ad-overline">Archivo</p>
         <h1 className="ad-title">Archivos — Dashboard</h1>
-        <p className="ad-intro">
-          Galería visual (134 imágenes). Selecciona una imagen para verla en detalle.
-        </p>
+        <p className="ad-intro">Galería visual (134 imágenes). Selecciona una imagen para verla en detalle.</p>
 
         <div className="ad-toolbar">
           <div className="ad-search">
@@ -625,9 +667,7 @@ export default function ArchivosDashboard() {
         <div className="ad-refs-head">
           <p className="ad-refs-overline">Referencias</p>
           <h2 className="ad-refs-title">Referencias de los archivos — Imágenes</h2>
-          <p className="ad-refs-sub">
-            Créditos y fuentes de las piezas visuales incluidas en este dashboard.
-          </p>
+          <p className="ad-refs-sub">Créditos y fuentes de las piezas visuales.</p>
         </div>
 
         <div className="ad-refs-block">

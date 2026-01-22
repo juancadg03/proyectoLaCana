@@ -304,7 +304,7 @@ function Archivos() {
 
         <article id="refs-paisaje-canero" className="refs-block">
           <header className="refs-block-head">
-            <h2 className="refs-block-title">Paisaje cañero</h2>
+            <h2 className="refs-block-title">Viñeta: Paisaje cañero</h2>
           </header>
 
           <ul className="refs-list">
@@ -363,6 +363,40 @@ function Archivos() {
             </li>
           </ul>
         </article>
+
+
+      <article id="refs-cmezcla" className="refs-block">
+        <header className="refs-block-head">
+          <h2 className="refs-block-title">Viñeta: La cínica mezcla de lo dulce y barato</h2>
+        </header>
+
+        <ol className="refs-list">
+          <li className="refs-item">
+            OMS (2016). Report of the Commission on Ending Childhood Obesity.
+            <a href="https://www.who.int/publications/i/item/9789241510066" target="_blank" rel="noreferrer">https://www.who.int/publications/i/item/9789241510066</a>
+          </li>
+
+          <li className="refs-item">
+            OPS (2011). Recomendaciones de la OPS sobre la promoción y publicidad de alimentos y bebidas no alcohólicas dirigida a los niños.
+            <a href="https://iris.paho.org/handle/10665.2/359" target="_blank" rel="noreferrer">https://iris.paho.org/handle/10665.2/359</a>
+          </li>
+
+          <li className="refs-item">
+            Moodie, R. et al. (2013). Profits and pandemics: prevention of harmful effects of tobacco, alcohol, and ultra-processed food and drink industries. The Lancet.
+            <a href="https://www.thelancet.com/article/S0140-6736(12)62089-3/fulltext" target="_blank" rel="noreferrer">https://www.thelancet.com/article/S0140-6736(12)62089-3/fulltext</a>
+          </li>
+
+          <li className="refs-item">
+            Hastings, G. et al. (2006). The extent, nature and effects of food promotion to children: a review of the evidence. OMS.
+            <a href="https://www.who.int/publications/i/item/9241593529" target="_blank" rel="noreferrer">https://www.who.int/publications/i/item/9241593529</a>
+          </li>
+
+          <li className="refs-item">
+            Lustig, R. H., Schmidt, L. A., &amp; Brindis, C. D. (2012). Public health: The toxic truth about sugar. Nature.
+            <a href="https://www.nature.com/articles/482027a" target="_blank" rel="noreferrer">https://www.nature.com/articles/482027a</a>
+          </li>
+        </ol>
+      </article>
 
       <article id="refs-figuras-metodologia" className="refs-block">
         <header className="refs-block-head">
@@ -892,6 +926,8 @@ function Archivos() {
           </li>
         </ul>
       </article>
+
+      
 
       </section>
     </main>

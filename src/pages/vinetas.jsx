@@ -12,6 +12,8 @@ const imgHablar = "/assets/vinetas/Hablar-desde-un-lugar.jpg";
 const imgBrisa = "/assets/vinetas/Cuando-la-brisa-llega-y-el-sol-se-queda.JPG";
 const imgpaije = "/assets/vinetas/paisaje2.jpg";
 const imgcmezcla = "/assets/vinetas/la-cinica-de-la-mezcla.jpg";
+const imggesto = "/assets/vinetas/gestovisual.jpeg";
+const imgdiario = "/assets/vinetas/Diario-de-campo-de-una-tesis.jpg";
 
 const vinetas = [
   {
@@ -49,6 +51,18 @@ const vinetas = [
     title: "La cínica mezcla de lo dulce y barato",
     subtitle: "Lo barato que mata: costos invisibles del azúcar.",
     image: imgcmezcla,
+  },
+  {
+    id: "gestovisual",
+    title: "Gesto visual",
+    subtitle: "La mirada del trabajador en la caña.",
+    image: imggesto,
+  },
+  {
+    id: "diario-de-campo",
+    title: "Diario de campo de una tesis",
+    subtitle: "Notas de campo y reflexiones sobre el paisaje cañero.",
+    image: imgdiario,
   },
 ];
 

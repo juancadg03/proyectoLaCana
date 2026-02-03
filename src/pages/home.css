@@ -74,3 +74,53 @@
     opacity: 0;
   }
 }
+
+/* =========================
+   TEXTO DE PORTADA (HOME)
+========================= */
+
+.home-intro {
+  max-width: 820px;
+  margin: 1.1rem auto 0 auto;
+  padding: 1rem 1.25rem;
+
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.75;
+
+  color: rgba(13, 13, 13, 0.86);
+
+  background: rgba(242, 242, 242, 0.48);
+  border: 1px solid rgba(13, 13, 13, 0.10);
+  border-radius: 18px;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
+}
+
+.home-intro p {
+  margin: 0;
+}
+
+.home-intro p + p {
+  margin-top: 0.85rem;
+}
+
+/* Detalle visual suave: primera línea con un acento mínimo */
+.home-intro p:first-child {
+  color: rgba(13, 13, 13, 0.92);
+}
+
+/* Responsive: que no se “apriete” ni quede enorme */
+@media (max-width: 768px) {
+  .home-intro {
+    margin-top: 1rem;
+    padding: 0.95rem 1rem;
+    font-size: 0.98rem;
+    border-radius: 16px;
+  }
+}
+
+

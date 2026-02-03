@@ -12,6 +12,9 @@ import "./App.css";
 import ArchivosDashboard from "./components/archivos-dashboard.jsx";
 import EtnografiaDashboard from "./components/etnografia-dashboard.jsx";
 import ContactoDashboard from "./pages/contacto-dashboard.jsx";
+import TalleresColaborativosSection from "./components/TalleresColaborativosSection.jsx";
+import AnalisisNarrativo from "./pages/analisis-narrativo.jsx";
+import LineaDelTiempo from "./pages/linea-del-tiempo.jsx";
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/metodologia" element={<Metodologia />} />
+        <Route path="/metodologia/talleres-colaborativos" element={<TalleresColaborativosSection />} />
+        <Route path="/metodologia/analisis-narrativo" element={<AnalisisNarrativo/>} />
+        <Route path="/metodologia/linea-del-tiempo" element={<LineaDelTiempo/>} />
         <Route path="/vinetas" element={<Vinetas />} />  
         <Route path="/vinetas/:id" element={<VinetaDetalle />} /> 
         <Route path="/contra-imagen" element={<ContraImagen />} /> 

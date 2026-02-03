@@ -1,6 +1,7 @@
 // TalleresColaborativosSection.jsx
 import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import "./TalleresColaborativosSection.css";
 
 function InlineSlider({ images, label }) {
   const [i, setI] = useState(0);
@@ -66,7 +67,6 @@ export default function TalleresColaborativosSection() {
       { src: "/assets/cartografia_1.JPG", alt: "Taller de cartografía 1" },
       { src: "/assets/cartografia_2.JPG", alt: "Taller de cartografía 2" },
       { src: "/assets/cartografia_3.JPG", alt: "Taller de cartografía 3" },
-      { src: "/assets/cartografia_4.JPG", alt: "Taller de cartografía 4" },
       { src: "/assets/cartografia_5.JPG", alt: "Taller de cartografía 5" },
       { src: "/assets/cartografia_6.JPG", alt: "Taller de cartografía 6" },
     ],

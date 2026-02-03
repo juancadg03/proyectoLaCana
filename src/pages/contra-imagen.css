@@ -356,3 +356,83 @@
   margin-top: 0.35rem;
   margin-left: 0;
 }
+
+/* ===== NAV EN MODAL (FLECHAS) ===== */
+
+.ci-modal-content {
+  position: relative; /* ya lo tienes, pero lo reafirmo */
+}
+
+/* Botones flecha */
+.ci-modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  border: none;
+  background: rgba(13, 13, 13, 0.55);
+  color: #f2f2f2;
+
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2rem;
+  line-height: 1;
+  z-index: 5;
+
+  transition: background 0.2s ease, transform 0.15s ease;
+  user-select: none;
+}
+
+.ci-modal-nav:hover {
+  background: rgba(13, 13, 13, 0.8);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.ci-modal-prev {
+  left: 0.65rem;
+}
+
+.ci-modal-next {
+  right: 0.65rem;
+}
+
+/* Contador (1 / N) */
+.ci-modal-counter {
+  position: absolute;
+  left: 50%;
+  bottom: 0.75rem;
+  transform: translateX(-50%);
+
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+
+  background: rgba(13, 13, 13, 0.55);
+  color: rgba(242, 242, 242, 0.95);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  z-index: 5;
+}
+
+/* En móvil: botones un poco más pequeños */
+@media (max-width: 768px) {
+  .ci-modal-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.8rem;
+  }
+
+  .ci-modal-prev {
+    left: 0.45rem;
+  }
+
+  .ci-modal-next {
+    right: 0.45rem;
+  }
+}

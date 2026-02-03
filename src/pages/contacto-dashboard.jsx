@@ -3,6 +3,8 @@ import React from "react";
 import "./contacto-dashboard.css";
 
 export default function ContactoDashboard() {
+  const year = new Date().getFullYear();
+
   return (
     <main className="contacto-page">
       <header className="contacto-hero">
@@ -24,7 +26,7 @@ export default function ContactoDashboard() {
           </div>
 
           <p className="contacto-card-text">
-            Puedes escribir por correo o por WhatsApp. 
+            Puedes escribir por correo o por WhatsApp.
           </p>
 
           <div className="contacto-fields">
@@ -64,8 +66,25 @@ export default function ContactoDashboard() {
             </a>
           </div>
 
-        </article>
+          {/* ✅ Autoría / créditos */}
+          <footer className="contacto-foot">
+            <span className="contacto-foot-chip">© {year}</span>
 
+            <p className="contacto-foot-hint">
+              Sitio web diseñado y desarrollado por{" "}
+              <a
+                className="contacto-credit-link"
+                href="https://github.com/juancadg03"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Autoría: GitHub de Juan Carlos Díaz"
+              >
+                Juan Carlos Díaz
+              </a>
+              .
+            </p>
+          </footer>
+        </article>
       </section>
     </main>
   );

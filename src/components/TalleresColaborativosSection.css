@@ -1,0 +1,224 @@
+.metodologia-overline {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  color: #a4a672;
+  margin-bottom: 0.4rem;
+}
+
+.metodologia-title {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 2.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 0.9rem 0;
+}
+
+.metodologia-intro {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #333333;
+}
+/* ===== Talleres colaborativos (misma estética/paleta) ===== */
+
+.ws2 {
+  width: min(1120px, 92%);
+  margin: 2.2rem auto 4rem auto;
+  color: #0d0d0d;
+  background-color: #f9f9e8; /* blanco hueso / beige */
+}
+
+
+/* Intro centrada */
+.ws2-intro {
+  text-align: center;
+  margin-bottom: 2.7rem;
+}
+
+.ws2-overline {
+  margin: 0 0 0.75rem 0;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #A4A672;
+}
+
+/* Prosa (texto seguido) */
+.ws2-prose {
+  background: rgba(242, 242, 242, 0.62);
+  border: 1px solid rgba(164, 166, 114, 0.28);
+  border-radius: 16px;
+  padding: 1.05rem 1.15rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 16px 30px rgba(13, 13, 13, 0.10);
+}
+
+.ws2-prose-center {
+  width: min(860px, 100%);
+  margin: 0 auto;
+}
+
+.ws2-prose-full {
+  width: min(980px, 100%);
+  margin: 0 auto;
+}
+
+.ws2-text {
+  margin: 0;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: rgba(13, 13, 13, 0.92);
+}
+
+.ws2-text + .ws2-text {
+  margin-top: 0.85rem;
+}
+
+/* Bloques: que se sienta continuo */
+.ws2-block {
+  margin-top: 2.1rem;
+}
+
+.ws2-header {
+  margin: 0.3125rem 5 5 0;
+}
+
+.ws2-head-right {
+  text-align: right;
+}
+
+.ws2-title {
+  margin: 0;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0d0d0d;
+}
+
+/* Split compacto: slider pegado, sin “bloque” separado */
+.ws2-split {
+  display: grid;
+  gap: 1.05rem;
+  align-items: start;
+}
+
+.ws2-split-rightMedia {
+  grid-template-columns: 1.25fr 0.75fr;
+}
+
+.ws2-split-leftMedia {
+  grid-template-columns: 0.75fr 1.25fr;
+}
+
+.ws2-media {
+  position: sticky;
+  top: 1.1rem;
+  align-self: start;
+}
+
+/* Slider inline (sin captions debajo) */
+.inl-slider {
+  background: rgba(217, 197, 180, 0.18);
+  border: 1px solid rgba(164, 166, 114, 0.30);
+  border-radius: 16px;
+  padding: 0.65rem;
+  box-shadow: 0 14px 26px rgba(13, 13, 13, 0.10);
+}
+
+.inl-frame {
+  width: 100%;
+  aspect-ratio: 3 / 4; /* más vertical, menos “aire” abajo */
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(242, 242, 242, 0.78);
+  border: 1px solid rgba(13, 13, 13, 0.10);
+}
+
+.inl-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Controles MUY compactos */
+.inl-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.55rem;
+  margin-top: 0.5rem;
+}
+
+.inl-btn {
+  border: 1px solid rgba(164, 166, 114, 0.45);
+  background: rgba(242, 242, 242, 0.76);
+  color: rgba(13, 13, 13, 0.85);
+  border-radius: 999px;
+  padding: 0.25rem 0.55rem;
+  cursor: pointer;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  line-height: 1;
+}
+
+.inl-dots {
+  display: flex;
+  gap: 0.28rem;
+  justify-content: center;
+  flex: 1;
+}
+
+.inl-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(164, 166, 114, 0.55);
+  background: rgba(242, 242, 242, 0.85);
+  cursor: pointer;
+}
+
+.inl-dot-active {
+  background: rgba(164, 166, 114, 0.85);
+}
+
+/* Empty */
+.inl-slider-empty .inl-empty {
+  aspect-ratio: 3 / 4;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(242, 242, 242, 0.8);
+  border: 1px dashed rgba(164, 166, 114, 0.55);
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  color: rgba(13, 13, 13, 0.65);
+  text-align: center;
+  padding: 0 0.75rem;
+}
+
+/* Conclusión abajo, sin imágenes */
+.ws2-conclusion {
+  margin-top: 2.3rem;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .ws2-split-rightMedia,
+  .ws2-split-leftMedia {
+    grid-template-columns: 1fr;
+  }
+
+  .ws2-media {
+    position: static;
+  }
+
+  .ws2-head-right {
+    text-align: left;
+  }
+
+  .inl-frame {
+    aspect-ratio: 16 / 9;
+  }
+}

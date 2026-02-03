@@ -7,6 +7,224 @@
    #F2F2F2 – casi blanco
    #0D0D0D – negro profundo
 */
+/* src/components/MainMenu.css */
+
+
+/* =========================
+   Dropdown de Metodología
+   ========================= */
+
+.main-menu-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.main-menu-dropdown-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  line-height: 1.3; /* igual que .main-menu-link */
+}
+
+/* caret */
+.main-menu-caret {
+  font-size: 0.9em;
+  opacity: 0.75;
+  transform: translateY(1px);
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.main-menu-dropdown.is-open .main-menu-caret {
+  transform: translateY(1px) rotate(180deg);
+  opacity: 0.95;
+}
+
+/* Panel */
+.main-menu-dropdown-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  min-width: 290px;
+  padding: 0.55rem;
+
+  border-radius: 14px;
+  z-index: 999;
+
+  background: rgba(242, 242, 242, 0.94);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(10px);
+
+  transform-origin: top left;
+  animation: mmDropIn 160ms ease-out;
+}
+
+/* triangulito */
+.main-menu-dropdown-panel::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 18px;
+  width: 14px;
+  height: 14px;
+  transform: rotate(45deg);
+  background: rgba(242, 242, 242, 0.94);
+  border-left: 1px solid rgba(0, 0, 0, 0.10);
+  border-top: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.main-menu-dropdown-item {
+  display: block;
+  padding: 0.62rem 0.75rem;
+  border-radius: 12px;
+  text-decoration: none;
+
+  color: rgba(13, 13, 13, 0.92);
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.2;
+
+  transition: background 0.16s ease, border-color 0.16s ease, transform 0.16s ease;
+}
+
+.main-menu-dropdown-item:hover {
+  background: rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+.main-menu-dropdown-item:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(164, 166, 114, 0.32);
+}
+
+.main-menu-dropdown-item-active {
+  background: rgba(164, 166, 114, 0.18);
+  border: 1px solid rgba(164, 166, 114, 0.35);
+}
+
+.main-menu-dropdown-hint {
+  display: block;
+  margin-top: 0.18rem;
+  font-size: 0.75rem;
+  opacity: 0.72;
+  letter-spacing: 0.01em;
+}
+
+@keyframes mmDropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================
+   Menú inferior fijo (Inicio/Contacto)
+   ========================= */
+
+.bottom-mini-menu {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 60;
+
+  display: inline-flex;
+  gap: 0.6rem;
+  align-items: center;
+
+  padding: 0.70rem;
+  border-radius: 999px;
+
+  background: #E3E4CC;
+  border: 1px solid rgba(0,0,0,0.10);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 34px rgba(0,0,0,0.14);
+}
+
+.bottom-mini-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.52rem 0.8rem;
+  border-radius: 999px;
+
+  text-decoration: none;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 0.8rem;
+  color: rgba(13, 13, 13, 0.88);
+  font-weight: 1200;
+
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0.10);
+  transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.bottom-mini-link:hover {
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.86);
+  box-shadow: 0 14px 24px rgba(0,0,0,0.10);
+  border-color: rgba(0,0,0,0.14);
+}
+
+.bottom-mini-link-active {
+  background: rgba(164, 166, 114, 0.22);
+  border-color: rgba(164, 166, 114, 0.45);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-menu {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .main-menu-list {
+    gap: 0.45rem;
+  }
+
+  .main-menu-link {
+    padding: 0.5rem 0.72rem;
+    font-size: 0.88rem;
+    
+  }
+
+  .main-menu-dropdown-panel {
+    left: auto;
+    right: 0;
+    min-width: 260px;
+  }
+  
+  .main-menu-link-bold {
+  font-weight: 800 !important;
+  -webkit-text-stroke: 0.35px rgba(0, 0, 0, 0.38);
+  text-shadow:
+    0.25px 0 rgba(0, 0, 0, 0.25),
+  -0.25px 0 rgba(0, 0, 0, 0.25),
+    0 0.6px 0 rgba(255, 255, 255, 0.22);
+  }
+
+
+  .main-menu-dropdown-panel::before {
+    left: auto;
+    right: 18px;
+  }
+
+  .bottom-mini-menu {
+    left: 12px;
+    bottom: 12px;
+  }
+
+  .bottom-mini-link {
+    padding: 0.48rem 0.72rem;
+    font-size: 0.86rem;
+  }
+}
+
 
 /* Barra tipo "tallo de caña" horizontal, muy minimal */
 .main-menu {
@@ -19,6 +237,7 @@
 
   /* Fondo claro, casi crema-verdoso */
   background: #E3E4CC; /* tono suave entre verde y beige */
+  
   border-radius: 12px;
   border: 1px solid rgba(164, 166, 114, 0.4); /* A4A672 suave */
 
@@ -80,7 +299,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   font-family: "Space Grotesk", system-ui, sans-serif;
-
+  line-height: 1.2;
   padding: 0.25rem 0.45rem;
   text-align: left;
   cursor: pointer;
@@ -147,3 +366,4 @@
   background-color: rgba(242, 242, 242, 0.9);
   color: #0d0d0d;
 }
+
